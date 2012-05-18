@@ -1,0 +1,33 @@
+// MainScreenGroup
+"Existing groups" = "既存のグループ";
+"SMS Party Free" = "SMS Party 無料で";
+"SMS Party Free only allows a maximum of 5 groups to be created" = "無料の SMS Party はあなたに５時まで最大のグループを作ることを許します";
+
+// GroupDetailElement
+"contact" = "人々";
+"contacts" = "人々";
+
+// ContactListController
+"Group Name" = "グループ名";
+"The name that will best describe your group" = "最も良くあなたのグループを記述するであろう名前";
+"Name" = "名前";
+"Displays only contacts that have a mobile phone set" = "ポスト（ショー）ただ（可動的な）動機を持っている接触";
+"All" = "すべて";
+"None" = "誰もです";
+"Group Name Error" = "グループの名前に関するエラー";
+"You must specify a group name" = "どうかあなたのグループの名前を指定してください";
+"Can't create the group because a group with the same name exists" = "名前はすでに使われます";
+"Can't update the group because a group with the same name exists" = "名前はすでに使われます";
+"Contact List" = "接触のリスト";
+
+// SmsComposerViewController
+"Sms is being sent" = "SMS を送ること";
+"Your message will be sent soon" = "SMS は送信することについてのコースにあります";
+"Max Recipient" = "送信すること毎の受取人の数";
+"If you have too many recipients and would like to send by smaller group at a time,\r\nyou can modify the slider to specify the maximum number of recipients per text message" = "もしあなたがあまりに多くの受取人を持っていて、そして一度により小さいグループによって送信することを望むなら、あなたはテキストメッセージ毎に受取人の最大の数を指定するために引戸を修正することができます";
+"Magic Expression\r\n(only available in full version)" = "魔法のような表現\r\n(ただ完全なバージョンで利用可能なだけです)";
+"Magic Expression allows you to add first and/or last name of your recipient in your custom message.\r\nFor example if you want to wish happy new year to everyone but you want to write their name,\r\nYour message will look like this \r\n'Happy New Year /f!!'\r\n/f : add first name\r\n/l : add last name\r\nWhen Magic Expression is enabled, you can send only 1 sms at a time." =
+"魔法の表現があなたに最初そして／あるいはあなたの注文製のメッセージであなたの受取人の最後の名前を加えることを許します.\r\n 例えばもしあなたが皆に幸多い新年を望むことを望む、しかしあなたが（彼・それ）らの名前を書くことを望むなら あなたのメッセージはこれのように見えるでしょう '幸多い新年 /f!!'\r\n/f : 最初の名前を加えてください\r\n/l : 姓を加えてください\r\nマジック表現が使用可能であるとき、あなたは一度にたった１の sms を送ることができます.";
+"Max contacts per message" = "送信すること毎の受取人の数";
+"Compose your message" = "あなたのメッセージを書いてください";
+"Use Magic Expression" = "魔法の表現を使ってください";

@@ -1,0 +1,223 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13E856000000000000000000 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FA52E800000000000000000 /* CoreGraphics.framework */; };
+		1FBBB8000000000000000000 /* FirstViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 1DB894000000000000000000 /* FirstViewController.h */; };
+		4B6207000000000000000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 671EDF800000000000000000 /* Foundation.framework */; };
+		553245000000000000000000 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EF1D800000000000000000 /* SecondViewController.m */; };
+		5B8EA8800000000000000000 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 774B81000000000000000000 /* AppDelegate.h */; };
+		82DBB8000000000000000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5569000000000000000000 /* UIKit.framework */; };
+		930859800000000000000000 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC532000000000000000000 /* FirstViewController.m */; };
+		C425A7000000000000000000 /* SecondViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = DFE27F800000000000000000 /* SecondViewController.h */; };
+		EC9B46800000000000000000 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8581F0000000000000000000 /* AppDelegate.m */; };
+		FB9F58000000000000000000 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175C30800000000000000000 /* MainStoryboard.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		175C30800000000000000000 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		1DB894000000000000000000 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		2FA52E800000000000000000 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		671EDF800000000000000000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		70EF1D800000000000000000 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		774B81000000000000000000 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8581F0000000000000000000 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AEC532000000000000000000 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		BA5569000000000000000000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D8BF28000000000000000000 /* SmsGrouped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmsGrouped.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFE27F800000000000000000 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		60C27C000000000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82DBB8000000000000000000 /* UIKit.framework in Frameworks */,
+				4B6207000000000000000000 /* Foundation.framework in Frameworks */,
+				13E856000000000000000000 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EBD79C00000000000000000 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8581F0000000000000000000 /* AppDelegate.m */,
+				AEC532000000000000000000 /* FirstViewController.m */,
+				70EF1D800000000000000000 /* SecondViewController.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		59D9EFC00000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				B36CDCC00000000000000000 /* SmsGrouped */,
+				AD1079400000000000000000 /* Frameworks */,
+				6A3664000000000000000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6A3664000000000000000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8BF28000000000000000000 /* SmsGrouped.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD1079400000000000000000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA5569000000000000000000 /* UIKit.framework */,
+				671EDF800000000000000000 /* Foundation.framework */,
+				2FA52E800000000000000000 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B36CDCC00000000000000000 /* SmsGrouped */ = {
+			isa = PBXGroup;
+			children = (
+				774B81000000000000000000 /* AppDelegate.h */,
+				1DB894000000000000000000 /* FirstViewController.h */,
+				175C30800000000000000000 /* MainStoryboard.storyboard */,
+				DFE27F800000000000000000 /* SecondViewController.h */,
+				1EBD79C00000000000000000 /* Supporting Files */,
+			);
+			name = SmsGrouped;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		168A5F000000000000000000 /* SmsGrouped */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCF772000000000000000000 /* Build configuration list for PBXNativeTarget "SmsGrouped" */;
+			buildPhases = (
+				2948CB000000000000000000 /* Sources */,
+				60C27C000000000000000000 /* Frameworks */,
+				4505A3800000000000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmsGrouped;
+			productName = SmsGrouped;
+			productReference = D8BF28000000000000000000 /* SmsGrouped.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D6F7F8000000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 69C0E8800000000000000000 /* Build configuration list for PBXProject "SmsGrouped" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 59D9EFC00000000000000000;
+			productRefGroup = 6A3664000000000000000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				168A5F000000000000000000 /* SmsGrouped */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4505A3800000000000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB9F58000000000000000000 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2948CB000000000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C425A7000000000000000000 /* SecondViewController.h in Sources */,
+				553245000000000000000000 /* SecondViewController.m in Sources */,
+				1FBBB8000000000000000000 /* FirstViewController.h in Sources */,
+				930859800000000000000000 /* FirstViewController.m in Sources */,
+				5B8EA8800000000000000000 /* AppDelegate.h in Sources */,
+				EC9B46800000000000000000 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D61241800000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = MonoTouch;
+		};
+		F1CF1A000000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				PRODUCT_NAME = SmsGrouped;
+				WRAPPER_EXTENSION = app;
+			};
+			name = MonoTouch;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69C0E8800000000000000000 /* Build configuration list for PBXProject "SmsGrouped" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D61241800000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+		BCF772000000000000000000 /* Build configuration list for PBXNativeTarget "SmsGrouped" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1CF1A000000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D6F7F8000000000000000000 /* Project object */;
+}
