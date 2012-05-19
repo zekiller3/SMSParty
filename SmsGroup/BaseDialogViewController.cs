@@ -5,7 +5,8 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.Dialog;
-
+using MonoTouch.iAd;
+using System.Drawing;
 namespace SmsGroup
 {
 	public abstract class BaseDialogViewController : DialogViewController
@@ -16,7 +17,7 @@ namespace SmsGroup
 			
 			public override bool CanEditRow (UITableView tableView, NSIndexPath indexPath)
 			{
-
+				
 				// uncomment these lines to authorize delete only on blob and not "folder"
 //				var section = Container.Root [indexPath.Section];
 //				return section [indexPath.Row] is S3ObjectElement;
@@ -45,13 +46,18 @@ namespace SmsGroup
 		
 		protected virtual UIBarButtonItem[] EditBarButtonItems {get;set;}
 		protected UIBarButtonItem[] defaultBarButtonItems {get;set;}
-		
-		public BaseDialogViewController (bool isPushed) : base (UITableViewStyle.Grouped, null, isPushed)
+		protected ADBannerView Ad {get;set;}
+		protected bool EditEnabled {get;set;}
+		protected DialogViewController Dialog {get;set;}
+		public BaseDialogViewController (bool isPushed, bool editEnabled = true) : base (UITableViewStyle.Grouped, null, isPushed)
 		{
 			EnableSearch = true;
 			AutoHideSearch = false;
 			defaultBarButtonItems = DefaultBarButton();
-			EditBarButtonItems  = new UIBarButtonItem[0];
+			EditEnabled = editEnabled;
+			if(EditEnabled){
+				EditBarButtonItems  = new UIBarButtonItem[0];
+			}
 		}
 		
 		/// <summary>
@@ -78,32 +84,41 @@ namespace SmsGroup
 		#region UI
 		public override Source CreateSizingSource (bool unevenRows)
 		{
-			//if (unevenRows)
-			//	throw new NotImplementedException ("You need to create a new SourceSizing subclass, this sample does not have it");
-			return new MainScreenEditViewController (this);
+			if(EditEnabled){
+				//if (unevenRows)
+				//	throw new NotImplementedException ("You need to create a new SourceSizing subclass, this sample does not have it");
+				return new MainScreenEditViewController (this);
+			}
+			else
+			{
+				return base.CreateSizingSource(unevenRows);
+			}
 		}
 		
 		protected void ConfigEdit ()
 		{
-			this.NavigationItem.RightBarButtonItem = new UIBarButtonItem (UIBarButtonSystemItem.Edit, delegate {
-				// Activate editing
-				this.TableView.SetEditing (true, true);
-				this.NavigationItem.HidesBackButton = true;
-				ConfigDone ();
-				this.ToolbarItems = this.EditBarButtonItems;
-				
-			});
+			if(this.EditEnabled){
+				this.NavigationItem.RightBarButtonItem = new UIBarButtonItem (UIBarButtonSystemItem.Edit, delegate {
+					// Activate editing
+					this.tableView.SetEditing (true, true);
+					this.NavigationItem.HidesBackButton = true;
+					ConfigDone ();
+					this.ToolbarItems = this.EditBarButtonItems;
+				});
+			}
 		}
 		
 		protected void ConfigDone ()
 		{
-			this.NavigationItem.RightBarButtonItem = new UIBarButtonItem (UIBarButtonSystemItem.Done, delegate {
-				// Deactivate editing
-				this.TableView.SetEditing (false, true);
-				this.NavigationItem.HidesBackButton = false;
-				ConfigEdit ();
-				this.ToolbarItems = defaultBarButtonItems;
-			});
+			if(this.EditEnabled){
+				this.NavigationItem.RightBarButtonItem = new UIBarButtonItem (UIBarButtonSystemItem.Done, delegate {
+					// Deactivate editing
+					this.tableView.SetEditing (false, true);
+					this.NavigationItem.HidesBackButton = false;
+					ConfigEdit ();
+					this.ToolbarItems = defaultBarButtonItems;
+				});
+			}
 		}
 		
 		#endregion UI
@@ -113,22 +128,52 @@ namespace SmsGroup
 			base.ViewWillAppear (animated);			
 			this.NavigationController.ToolbarHidden = false;
 			this.ToolbarItems = defaultBarButtonItems;
+#if LITE
+			int toolbarheight = this.NavigationController.ToolbarHidden ? 0 : 87;
+			Ad = AdManager.GetAd(0,UIScreen.MainScreen.ApplicationFrame.Height - toolbarheight - AdManager.Ad.Frame.Height);
+			Ad.Delegate = new SmsAdDelegate(this);
+			Console.WriteLine("TableView Height before : " + this.tableView.Frame.Size.Height);
+			this.tableView.Frame = new RectangleF(0,
+			                                      this.tableView.Frame.Y,
+			                                      this.tableView.Frame.Width,
+			                                      this.tableView.Frame.Size.Height - AdManager.Ad.Frame.Height);
+			Console.WriteLine("TableView Height after : " + this.tableView.Frame.Size.Height);
+			this.MainView.AddSubview(Ad);
+			Console.WriteLine("Ad X:Y {0}:{1}", Ad.Frame.X, Ad.Frame.Y);	
+#endif
 		}		
+		
+		public override void ViewWillDisappear (bool animated)
+		{
+			base.ViewWillDisappear (animated);
+#if LITE
+			if(Ad != null){
+				this.Ad.Delegate.Dispose();
+				this.Ad.RemoveFromSuperview();
+				this.tableView.Frame = new RectangleF(0,
+			                                      this.tableView.Frame.Y,
+			                                      this.tableView.Frame.Width,
+			                                      this.tableView.Frame.Size.Height + AdManager.Ad.Frame.Height);
+			}
+#endif
+		}
 		
 		public override void ViewDidAppear (bool animated)
 		{
-			if(this.TableView.Editing)
-			{
-				ConfigDone();
-			}else
-			{
-				ConfigEdit();
+			if(this.EditEnabled){
+				if(this.tableView.Editing)
+				{
+					ConfigDone();
+				}else
+				{
+					ConfigEdit();
+				}
 			}
 			base.ViewDidAppear(animated);
 		}
 		
 		#endregion
 		
-		public abstract void HandleAddButtonClicked (object sender, EventArgs e);
+		public virtual void HandleAddButtonClicked (object sender, EventArgs e){}
 	}
 }

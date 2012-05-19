@@ -8,11 +8,11 @@ using MonoTouch.Dialog;
 using System.Threading;
 namespace SmsGroup
 {
-	public partial class EditContactBeforeSMSController : DialogViewController
+	public partial class EditContactBeforeSMSController : BaseDialogViewController
 	{
 		private const int SEGMENT_ALL = 0;
 		private const int SEGMENT_NONE = 1;
-		
+		private const string LocalizedKey = "ContactListController";
 		private SegmentedSection contact = null;
 		public ABPerson[] Phones
 		{
@@ -36,7 +36,7 @@ namespace SmsGroup
 			}
 		}
 		
-		public EditContactBeforeSMSController (SmsGroupObject g) : base (UITableViewStyle.Grouped, null, true)
+		public EditContactBeforeSMSController (SmsGroupObject g) : base (true, false)
 		{
 			Root = new RootElement("Edit");
 			contact = new SegmentedSection("Contacts");
@@ -51,10 +51,16 @@ namespace SmsGroup
 				}
 			}
 			
-			contact.SegmentedControl.InsertSegment("All",0,true);
-			contact.SegmentedControl.InsertSegment("None",1,true);
+			contact.SegmentedControl.InsertSegment(
+				Settings.GetLocalizedString("All", LocalizedKey),
+				0,true);
+			contact.SegmentedControl.InsertSegment(
+				Settings.GetLocalizedString("None", LocalizedKey),
+				1,true);
 			contact.SegmentedControl.ValueChanged += HandleContactSegmentedControlAllTouchEvents;
 			this.Root.Add(contact);
+			
+			this.defaultBarButtonItems = new UIBarButtonItem[0];
 		}
 
 		void HandleContactSegmentedControlAllTouchEvents (object sender, EventArgs e)
@@ -73,7 +79,7 @@ namespace SmsGroup
 					break;
 			}
 			
-			this.TableView.ReloadRows(this.TableView.IndexPathsForVisibleRows, UITableViewRowAnimation.None);
+			this.tableView.ReloadRows(this.tableView.IndexPathsForVisibleRows, UITableViewRowAnimation.None);
 			BeginInvokeOnMainThread(()=>{
 				Thread.Sleep(100);
 				this.contact.SegmentedControl.SelectedSegment = -1;

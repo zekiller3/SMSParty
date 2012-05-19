@@ -44,7 +44,7 @@ namespace SmsGroup
 		
 		public void SendSms()
 		{
-			if(!parent.TableView.Editing)
+			if(!parent.tableView.Editing)
 			{
 				if(this.Sms.Count > 0){
 					TransitionManager.SendSms(this.parent.NavigationController);
@@ -59,7 +59,7 @@ namespace SmsGroup
 		
 		public void ShowGroupDetail()
 		{
-			if(!this.parent.TableView.Editing){
+			if(!this.parent.tableView.Editing){
 				TransitionManager.EditGroup(this.parent.NavigationController);
 				if(contactListController == null)
 				{

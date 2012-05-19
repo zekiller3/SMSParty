@@ -32,6 +32,8 @@ namespace SmsGroup
 			viewController.PushViewController(new MainScreenGroup(), true);
 			window.MakeKeyAndVisible ();
 			
+			AdManager.LoadBanner();
+			
 			// On iOS5 we use the new window.RootViewController, on older versions, we add the subview
             if (UIDevice.CurrentDevice.CheckSystemVersion (5, 0))
 				window.RootViewController = viewController;	

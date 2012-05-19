@@ -16,7 +16,7 @@ namespace SmsGroup
 		public MainScreenGroup () : base (true)
 		{
 #if LITE
-			Root = new RootElement("SMS Party Lite");
+			Root = new RootElement("SMS Party Free");
 #else
 			Root = new RootElement("SMS Party");
 #endif
@@ -83,7 +83,7 @@ namespace SmsGroup
 		public override void HandleAddButtonClicked (object sender, EventArgs e)
 		{
 #if LITE
-			if(Contacts.GetAll().Count >= 5)
+			if(Contacts.GetAll().Count >= Settings.MaxGroupFreeVersion)
 			{
 				UIAlertView alert = new UIAlertView(Settings.GetLocalizedString("SMS Party Free", LocalizedKey),
 				                                    Settings.GetLocalizedString("SMS Party Free only allows a maximum of 5 groups to be created", LocalizedKey),

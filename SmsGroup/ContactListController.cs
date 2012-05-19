@@ -10,7 +10,7 @@ using System.Threading;
 using System.Drawing;
 namespace SmsGroup
 {
-	public partial class ContactListController : DialogViewController
+	public partial class ContactListController : BaseDialogViewController
 	{	
 		private const string LocalizedKey = "ContactListController";
 		private const int SEGMENT_ALL = 0;
@@ -25,7 +25,7 @@ namespace SmsGroup
 		/// </summary>
 		private bool isEditing = false;
 		private GroupDetailElement smsGroup = null;
-		public ContactListController (MainScreenGroup parent, GroupDetailElement smsGroup = null) : base (UITableViewStyle.Grouped, null, true)
+		public ContactListController (MainScreenGroup parent, GroupDetailElement smsGroup = null) : base (true, false)
 		{
 			this.EnableSearch = true;
 			this.AutoHideSearch = true;
@@ -78,14 +78,14 @@ namespace SmsGroup
 				activityView.Hidden = false;				
 				activityView.HidesWhenStopped = true;
 				activityView.ActivityIndicatorViewStyle = UIActivityIndicatorViewStyle.White;
-				loading = new UIBarButtonItem(activityView);
-				this.ToolbarItems = new []{space, refresh};
+				//loading = new UIBarButtonItem(activityView);
+				this.defaultBarButtonItems = new []{space, refresh};
 			});
-			
 		}
+		
 		private UIActivityIndicatorView activityView = null;
 		private UIBarButtonItem refresh = null;
-		private UIBarButtonItem loading = null;
+		//private UIBarButtonItem loading = null;
 		void HandleRefreshClicked (object sender, EventArgs e)
 		{
 				
@@ -138,12 +138,12 @@ namespace SmsGroup
 					break;
 			}
 			
-			List<NSIndexPath> visibleindex = this.TableView.IndexPathsForVisibleRows.ToList();
+			List<NSIndexPath> visibleindex = this.tableView.IndexPathsForVisibleRows.ToList();
 			if(visibleindex.Contains(nameElement.IndexPath))
 			{
 				visibleindex.Remove(nameElement.IndexPath);	
 			}
-			this.TableView.ReloadRows(visibleindex.ToArray(), UITableViewRowAnimation.None);
+			this.tableView.ReloadRows(visibleindex.ToArray(), UITableViewRowAnimation.None);
 			BeginInvokeOnMainThread(()=>{
 				Thread.Sleep(100);
 				this.contactSection.SegmentedControl.SelectedSegment = -1;
@@ -283,5 +283,9 @@ namespace SmsGroup
 		{
 			this.NavigationController.PopToRootViewController(false);
 		}
+		
+		#region abstract members
+		
+		#endregion
 	}
 }

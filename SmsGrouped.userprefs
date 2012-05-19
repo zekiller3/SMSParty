@@ -1,44 +1,29 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="LITE|iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SmsGroup/SmsComposerViewController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="LITE|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SmsGroup/BaseDialogViewController.cs">
     <Files>
-      <File FileName="SmsGroup/SmsComposerViewController.cs" Line="68" Column="24" />
-      <File FileName="SmsGroup/MainScreenGroup.cs" Line="89" Column="133" />
-      <File FileName="SmsGroup/Data/Contacts.cs" Line="33" Column="3" />
-      <File FileName="SmsGroup/Data/Core/SqlLite.cs" Line="49" Column="15" />
-      <File FileName="SmsGroup/Data/SmsGroupObject.cs" Line="32" Column="1" />
-      <File FileName="SmsGroup/Data/GroupPersonData.cs" Line="20" Column="3" />
-      <File FileName="SmsGroup/Data/Core/GroupPersonDatabase.cs" Line="66" Column="18" />
-      <File FileName="SmsGroup/UI/GroupDetailElement.cs" Line="12" Column="58" />
-      <File FileName="SmsGroup/ContactListController.cs" Line="113" Column="8" />
-      <File FileName="SmsGroup/BatchMFMessageComposeViewController.cs" Line="68" Column="4" />
-      <File FileName="SmsGroup/UI/ABPersonElement.cs" Line="30" Column="102" />
-      <File FileName="SmsGroup/EditContactBeforeSMSController.cs" Line="45" Column="1" />
-      <File FileName="SmsGroup/UI/TransitionManager.cs" Line="16" Column="4" />
-      <File FileName="SmsGroup/UI/SegmentedSection.cs" Line="20" Column="2" />
-      <File FileName="Debug/Dialog.cs" Line="20" Column="35" />
-      <File FileName="Debug/MySection.cs" Line="7" Column="16" />
-      <File FileName="Debug/AppDelegate.cs" Line="18" Column="9" />
-      <File FileName="SmsGroup/AppDelegate.cs" Line="19" Column="1" />
-      <File FileName="../AmazonWebService/AmazonWebService/UI/S3/Controller/BaseDialogViewController.cs" Line="133" Column="3" />
-      <File FileName="SmsGroup/BaseDialogViewController.cs" Line="51" Column="24" />
-      <File FileName="../AmazonWebService/AmazonWebService/UI/Toolbar/UIDeleteToolbar.cs" Line="7" Column="3" />
-      <File FileName="SmsGroup/SmsComposerViewController.designer.cs" Line="110" Column="1" />
-      <File FileName="SmsGroup/Data/Settings.cs" Line="16" Column="41" />
-      <File FileName="SmsGroup/fr.lproj/Localizable.strings" Line="15" Column="16" />
-      <File FileName="SmsGroup/AdvertisementController.cs" Line="18" Column="20" />
-      <File FileName="SmsGroup/Data/Core/Reachability.cs" Line="7" Column="1" />
-      <File FileName="SmsGroup/es.lproj/Localizable.strings" Line="24" Column="32" />
-      <File FileName="SmsGroup/ja.lproj/Localizable.strings" Line="3" Column="34" />
-      <File FileName="SmsGroup/en.lproj/Localizable.strings" Line="1" Column="1" />
-      <File FileName="../AmazonWebService/AmazonWebService/UI/View/LoadingView.cs" Line="21" Column="7" />
-      <File FileName="SmsGroup/Main.cs" Line="1" Column="1" />
+      <File FileName="SmsGroup/BaseDialogViewController.cs" Line="55" Column="1" />
+      <File FileName="../../../Projects/LolSound/HelloWorld2/FunSoundViewController.cs" Line="50" Column="15" />
+      <File FileName="SmsGroup/Data/Settings.cs" Line="8" Column="16" />
+      <File FileName="SmsGroup/MainScreenGroup.cs" Line="19" Column="42" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="SmsGroup" expanded="True" selected="True">
-            <Node name="UI" expanded="True" />
+          <Node name="SmsGroup Free" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="Data" expanded="True">
+              <Node name="Core" expanded="True" />
+            </Node>
+            <Node name="en.lproj" expanded="True" />
+            <Node name="es.lproj" expanded="True" />
+            <Node name="fr.lproj" expanded="True" />
+            <Node name="ja.lproj" expanded="True" />
+            <Node name="UI" expanded="True">
+              <Node name="Delegate" expanded="True" />
+            </Node>
+            <Node name="BaseDialogViewController.cs" selected="True" />
+            <Node name="SmsComposerViewController.cs" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -57,6 +42,7 @@
       <Breakpoint file="/Users/ronnykwon/Projects/SmsGrouped/SmsGroup/SmsComposerViewController.cs" line="85" />
       <Breakpoint file="/Users/ronnykwon/Projects/SmsGrouped/SmsGroup/SmsComposerViewController.cs" line="34" />
       <Breakpoint file="/Users/ronnykwon/Projects/SmsGrouped/SmsGroup/SmsComposerViewController.cs" line="57" />
+      <Breakpoint file="/Users/ronnykwon/github/local/SMSParty/SmsGroup/SmsComposerViewController.cs" line="130" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

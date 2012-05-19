@@ -7,7 +7,6 @@ namespace SmsGroup
 {
 	public class GroupPersonData
 	{
-		private ABPerson person;
 		public GroupPersonData ()
 		{
 		}

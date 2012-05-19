@@ -5,6 +5,8 @@ namespace SmsGroup
 {
 	public class Settings
 	{
+		public static int MaxGroupFreeVersion = 10;
+		
 		private static NSBundle localeBundle = null;
 		
 		private static string magicExpressionFirstName = "/f";

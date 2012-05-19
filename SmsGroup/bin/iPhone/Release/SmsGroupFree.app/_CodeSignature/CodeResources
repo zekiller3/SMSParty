@@ -30,11 +30,15 @@
 		</data>
 		<key>Mono.Security.dll</key>
 		<data>
-		CIKQGpxsi847qSeN4mONeoXVJF4=
+		OqBAo93d8eJmA6fvebEljLnsY78=
 		</data>
 		<key>MonoTouch.Dialog-1.dll</key>
 		<data>
-		VB4wQ4Pk4f7xzIRcS52mMqzPuyY=
+		8dlTPMnoGSHK/jIrEvct8/duvfU=
+		</data>
+		<key>MonoTouch.Dialog.dll</key>
+		<data>
+		+YDga7MbycFBX4db7qFADfLybRg=
 		</data>
 		<key>MonoTouchDebugConfiguration.txt</key>
 		<data>
@@ -54,27 +58,35 @@
 		</data>
 		<key>SmsGroup.exe</key>
 		<data>
-		IYYN9nSGOKgKNRrItkepN9oH7Eg=
+		cNDLFpEimCIN28Wo+QbnNdJjbD4=
 		</data>
 		<key>System.Core.dll</key>
 		<data>
-		0jvvDPJI+7ALBfEeFHYM7RrHJ98=
+		pJW3G/JddpaVAbI0PT2IXobjIwo=
+		</data>
+		<key>System.Json.dll</key>
+		<data>
+		PUFBvEJFnXSh6uhLFMuoIHecw+g=
 		</data>
 		<key>System.Runtime.Serialization.dll</key>
 		<data>
-		Ol69y16J6DnAmvUZV291d3roNvU=
+		8fWA1IMg/GMaD9JHAyxe/Buab+s=
+		</data>
+		<key>System.ServiceModel.Web.dll</key>
+		<data>
+		5RnjI5ZtNvL8CkG++R89CQcTx6Y=
 		</data>
 		<key>System.ServiceModel.dll</key>
 		<data>
-		QruE8Snt6b3xqfQV0ovoQ3cDexk=
+		HVt2L90dNPTTViIZEnxtIcq1YwY=
 		</data>
 		<key>System.Xml.dll</key>
 		<data>
-		S0uKxm4OU71sVFyc4bcVs5j5WBk=
+		mE4/HacxK72vAvXpppBlSbjs1EQ=
 		</data>
 		<key>System.dll</key>
 		<data>
-		UxjqR+VjV3atPC57eLRqFYai970=
+		XNWFLm2omEkrnEuhFomdb9uiBRg=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
@@ -98,11 +110,11 @@
 		</data>
 		<key>monotouch.dll</key>
 		<data>
-		GaR2d4oh6ryE33Em30VeHkn/Uo8=
+		VhofKm3ATIzuEBVDS08f3Ae6tbM=
 		</data>
 		<key>mscorlib.dll</key>
 		<data>
-		d6/PZcsPAPMlIgzBhq8bZXmiREU=
+		vudIMVaQARCJKrokEplSfoY+r2A=
 		</data>
 	</dict>
 	<key>rules</key>

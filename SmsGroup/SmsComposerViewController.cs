@@ -18,9 +18,7 @@ namespace SmsGroup
 		public SmsGroupObject Sms {get;set;}
 		public ABPerson[] Phones {get;set;}
 		private EditContactBeforeSMSController editContactController = null;
-		
-		public ADBannerView Ad {get;set;}
-		
+		private ADBannerView Ad;
 		public int BatchSize
 		{
 			get
@@ -53,26 +51,23 @@ namespace SmsGroup
 			
 #if LITE
 			MagicExpressionSwitch.Enabled = false;
+			
 #endif
-			SizeF bannerSize = ADBannerView.SizeFromContentSizeIdentifier(ADBannerView.SizeIdentifierPortrait);
-			Ad = new ADBannerView(new RectangleF(
-				0, 
-				UIScreen.MainScreen.ApplicationFrame.Height - 80 - bannerSize.Height, 
-				bannerSize.Width,
-				bannerSize.Height));
-			Ad.Delegate = new SmsAdDelegate();
-			Ad.Hidden = true;
-			//UIView v = new UIView(Ad.Frame);
-			//v.BackgroundColor = UIColor.Blue;
-			
-			
-//			Console.WriteLine("ad position X {0} Y {1} Width {2} Height {3}",
-//			    Ad.Frame.X, 
-//				Ad.Frame.Y, 
-//				bannerSize.Width,
-//				bannerSize.Height);
-			
-			this.Add(Ad);
+// 			UITextView debug = null;
+//			debug = new UITextView(new RectangleF(0, SendButton.Frame.Y + 2,160,20));
+//			this.Add(debug);
+//			ThreadPool.QueueUserWorkItem ((e) => {
+//				while(true){
+//					if(Ad!= null){
+//						InvokeOnMainThread(() => {
+//							debug.Text = 
+//								string.Format("Loaded {0}, AdSection {1},", Ad.BannerLoaded, Ad.AdvertisingSection);
+//						});
+//						
+//						Thread.Sleep(1000);
+//					}
+//				}
+//			});
 		}
 		
 		void HandleSliderhandleValueChanged (object sender, EventArgs e)
@@ -96,6 +91,7 @@ namespace SmsGroup
 			this.Message.Started += HandleMessagehandleStarted;
 			this.Message.Changed += HandleMessagehandleChanged;
 			this.MaskButton.AllTouchEvents += HandleMaskButtonhandleAllTouchEvents;
+
 		}
 
 		void HandleDoneClicked (object sender, EventArgs e)
@@ -145,22 +141,17 @@ namespace SmsGroup
 			Console.WriteLine("SmsComposer did load");
 		}
 		
-		public override void ViewDidUnload ()
-		{
-			base.ViewDidUnload ();
-			
-			// Clear any references to subviews of the main view in order to
-			// allow the Garbage Collector to collect them sooner.
-			//
-			// e.g. myOutlet.Dispose (); myOutlet = null;
-			
-			ReleaseDesignerOutlets ();
-		}
-		
 		public override void ViewWillAppear (bool animated)
 		{
 			base.ViewWillAppear (animated); 
 			Console.WriteLine("SmsComposer will appear");
+#if LITE
+			int toolbarheight = this.Parent.NavigationController.ToolbarHidden ? 0 : 87;
+			Ad = AdManager.GetAd(0,UIScreen.MainScreen.ApplicationFrame.Height - toolbarheight - AdManager.Ad.Frame.Height);
+			Ad.Delegate = new SmsAdDelegate();
+			this.Add(Ad);
+#endif
+			
 			// contacts might have changed, we need to update UI
 			if(this.editContactController != null)
 			{
@@ -180,6 +171,28 @@ namespace SmsGroup
 				
 			}
 		}
+		
+		public override void ViewWillDisappear (bool animated)
+		{
+			base.ViewWillDisappear (animated);
+			if(Ad != null){
+				this.Ad.Delegate.Dispose();
+				this.Ad.RemoveFromSuperview();
+			}
+		}
+		
+		public override void ViewDidUnload ()
+		{
+			base.ViewDidUnload ();
+			
+			// Clear any references to subviews of the main view in order to
+			// allow the Garbage Collector to collect them sooner.
+			//
+			// e.g. myOutlet.Dispose (); myOutlet = null;
+			
+			ReleaseDesignerOutlets ();
+		}
+		
 		
 		public void EditContact(object sender, EventArgs e)
 		{
