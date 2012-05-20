@@ -15,7 +15,21 @@ namespace SmsGroup
 		private const string LocalizedKey = "SmsComposerViewController";
 		private bool hasFinishedLoadedPersons = false;
 		public MainScreenGroup Parent {get;set;}
-		public SmsGroupObject Sms {get;set;}
+		public string UserMessage 
+		{
+			get
+			{
+				return this.Message.Text;
+			}
+			set
+			{
+				this.Message.Text = value;
+			}
+		}
+		public SmsGroupObject Sms 
+		{
+			get;set;
+		}
 		public ABPerson[] Phones {get;set;}
 		private EditContactBeforeSMSController editContactController = null;
 		private ADBannerView Ad;
@@ -193,6 +207,15 @@ namespace SmsGroup
 			ReleaseDesignerOutlets ();
 		}
 		
+		protected override void Dispose (bool disposing)
+		{
+			if(this.editContactController != null)
+			{
+				this.editContactController.Dispose();
+			}
+			
+			base.Dispose (disposing);
+		}
 		
 		public void EditContact(object sender, EventArgs e)
 		{

@@ -102,7 +102,6 @@ namespace SmsGroup
 		/// </param>
 		public static void Add(SmsGroupObject g)
 		{
-			
 			//deletes if exists
 			if(Groups.ContainsKey(g.Name))
 			{

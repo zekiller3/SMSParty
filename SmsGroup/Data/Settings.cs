@@ -5,7 +5,7 @@ namespace SmsGroup
 {
 	public class Settings
 	{
-		public static int MaxGroupFreeVersion = 10;
+		public static int MaxGroupFreeVersion = 5;
 		
 		private static NSBundle localeBundle = null;
 		

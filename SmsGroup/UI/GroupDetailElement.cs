@@ -11,7 +11,7 @@ namespace SmsGroup
 	{
 		private const string LocalizedKey = "GroupDetailElement";
 		private ContactListController contactListController = null;
-		private SmsComposerViewController smsComposerViewController = null;
+		public SmsComposerViewController smsComposerViewController = null;
 		
 		private MainScreenGroup parent;
 		private SmsGroupObject sms = null;

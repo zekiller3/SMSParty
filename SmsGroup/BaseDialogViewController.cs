@@ -132,28 +132,21 @@ namespace SmsGroup
 			int toolbarheight = this.NavigationController.ToolbarHidden ? 0 : 87;
 			Ad = AdManager.GetAd(0,UIScreen.MainScreen.ApplicationFrame.Height - toolbarheight - AdManager.Ad.Frame.Height);
 			Ad.Delegate = new SmsAdDelegate(this);
-			Console.WriteLine("TableView Height before : " + this.tableView.Frame.Size.Height);
-			this.tableView.Frame = new RectangleF(0,
-			                                      this.tableView.Frame.Y,
-			                                      this.tableView.Frame.Width,
-			                                      this.tableView.Frame.Size.Height - AdManager.Ad.Frame.Height);
-			Console.WriteLine("TableView Height after : " + this.tableView.Frame.Size.Height);
-			this.MainView.AddSubview(Ad);
-			Console.WriteLine("Ad X:Y {0}:{1}", Ad.Frame.X, Ad.Frame.Y);	
+			//Console.WriteLine("TableView Height before : " + this.tableView.Frame.Size.Height);
+			//((SmsAdDelegate)Ad.Delegate).ShowAdInController();
+			//Console.WriteLine("TableView Height after : " + this.tableView.Frame.Size.Height);
+			//this.MainView.AddSubview(Ad);
+			//Console.WriteLine("Ad X:Y {0}:{1}", Ad.Frame.X, Ad.Frame.Y);	
 #endif
 		}		
 		
 		public override void ViewWillDisappear (bool animated)
 		{
 			base.ViewWillDisappear (animated);
+			
 #if LITE
-			if(Ad != null){
+			if(Ad != null && Ad.Delegate != null){
 				this.Ad.Delegate.Dispose();
-				this.Ad.RemoveFromSuperview();
-				this.tableView.Frame = new RectangleF(0,
-			                                      this.tableView.Frame.Y,
-			                                      this.tableView.Frame.Width,
-			                                      this.tableView.Frame.Size.Height + AdManager.Ad.Frame.Height);
 			}
 #endif
 		}
@@ -173,6 +166,11 @@ namespace SmsGroup
 		}
 		
 		#endregion
+		public override void FinishSearch ()
+		{
+			searchBar.ResignFirstResponder ();
+			//this.RestoreSection();
+		}
 		
 		public virtual void HandleAddButtonClicked (object sender, EventArgs e){}
 	}

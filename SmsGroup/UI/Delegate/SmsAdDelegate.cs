@@ -14,6 +14,18 @@ namespace SmsGroup
 		public SmsAdDelegate (BaseDialogViewController c = null)
 		{
 			this.controller = c;
+			UpdateBannerVisibility(AdManager.Ad, false);
+		}
+		
+		public void ShowAdInController()
+		{
+			if(AdManager.Ad.BannerLoaded && controller != null)
+			{
+				controller.tableView.Frame = new RectangleF(0,
+			                                      controller.tableView.Frame.Y,
+			                                      controller.tableView.Frame.Width,
+			                                      controller.tableView.Frame.Size.Height - AdManager.Ad.Frame.Height);
+			}
 		}
 		
 		public override void WillLoad (ADBannerView banner)
@@ -42,7 +54,6 @@ namespace SmsGroup
 			Console.WriteLine("Ad Loaded");
 			banner.Hidden = false;
 			UpdateBannerVisibility(banner, false);
-			//RefreshAd(banner);
 		}
 		
 		public override void FailedToReceiveAd (ADBannerView banner, MonoTouch.Foundation.NSError error)
@@ -53,7 +64,7 @@ namespace SmsGroup
 		
 		private void UpdateBannerVisibility(ADBannerView banner, bool mustDisappear)
 		{
-			if(mustDisappear && this.isVisible){
+			if((mustDisappear || !banner.BannerLoaded) && this.isVisible){
 				banner.Hidden = true;
 				this.isVisible = false;
 				UIView.BeginAnimations("animateAdBannerOff",IntPtr.Zero);
@@ -66,25 +77,27 @@ namespace SmsGroup
 			                                      controller.tableView.Frame.Y,
 			                                      controller.tableView.Frame.Width,
 			                                      controller.tableView.Frame.Size.Height + AdManager.Ad.Frame.Height);
+					banner.RemoveFromSuperview();
 				}
 			}
 			
-			if(!mustDisappear && !this.isVisible)
+			if(!mustDisappear && banner.BannerLoaded && !this.isVisible)
 			{
 				UIView.BeginAnimations("animateAdBannerOn",IntPtr.Zero);
 				banner.Frame.X = 0;
 				UIView.CommitAnimations();
 				isVisible = true;
 				
-//				if(this.controller != null)
-//				{
-//					Console.WriteLine("TableView Height before : " + controller.tableView.Frame.Size.Height);
-//					controller.tableView.Frame = new RectangleF(0,
-//					                                      controller.tableView.Frame.Y,
-//					                                      controller.tableView.Frame.Width,
-//					                                      controller.tableView.Frame.Size.Height - AdManager.Ad.Frame.Height);
-//					Console.WriteLine("TableView Height after : " + controller.tableView.Frame.Size.Height);
-//				}
+				if(this.controller != null)
+				{
+					Console.WriteLine("TableView Height before : " + controller.tableView.Frame.Size.Height);
+					controller.tableView.Frame = new RectangleF(0,
+					                                      controller.tableView.Frame.Y,
+					                                      controller.tableView.Frame.Width,
+					                                      controller.tableView.Frame.Size.Height - AdManager.Ad.Frame.Height);
+					controller.MainView.AddSubview(banner);
+					Console.WriteLine("TableView Height after : " + controller.tableView.Frame.Size.Height);
+				}
 			}
 		}
 	}

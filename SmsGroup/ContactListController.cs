@@ -37,6 +37,7 @@ namespace SmsGroup
 			Section groupName = new Section(
 				Settings.GetLocalizedString("Group Name", LocalizedKey),
 			    Settings.GetLocalizedString("The name that will best describe your group", LocalizedKey));
+			groupName.IsSearchable = false;
 			nameElement = new EntryElement(
 				Settings.GetLocalizedString("Name", LocalizedKey),
 				Settings.GetLocalizedString("Group Name", LocalizedKey), smsGroup != null && smsGroup.Sms != null ? smsGroup.Sms.Name : "");
@@ -73,17 +74,17 @@ namespace SmsGroup
 			
 			refresh.Clicked += HandleRefreshClicked;
 			InvokeOnMainThread(() => {
-				activityView = new UIActivityIndicatorView(new RectangleF(0,0,25,25));
+				//activityView = new UIActivityIndicatorView(new RectangleF(0,0,25,25));
 				
-				activityView.Hidden = false;				
-				activityView.HidesWhenStopped = true;
-				activityView.ActivityIndicatorViewStyle = UIActivityIndicatorViewStyle.White;
+				//activityView.Hidden = false;				
+				//activityView.HidesWhenStopped = true;
+				//activityView.ActivityIndicatorViewStyle = UIActivityIndicatorViewStyle.White;
 				//loading = new UIBarButtonItem(activityView);
 				this.defaultBarButtonItems = new []{space, refresh};
 			});
 		}
 		
-		private UIActivityIndicatorView activityView = null;
+		//private UIActivityIndicatorView activityView = null;
 		private UIBarButtonItem refresh = null;
 		//private UIBarButtonItem loading = null;
 		void HandleRefreshClicked (object sender, EventArgs e)
@@ -121,7 +122,7 @@ namespace SmsGroup
 					}
 				}
 			}
-			contactSection.Elements = personElements.OrderBy(x => ((ABPersonElement)x).Person.FirstName).ToList<Element>();
+			contactSection.Elements = personElements.OrderBy(x => ((ABPersonElement)x).Person.FirstName).OrderByDescending(x => ((ABPersonElement)x).IsChecked ).ToList<Element>();
 		}
 		
 		void HandleContactSectionSegmentedControlTouchUpInside (object sender, EventArgs e)
@@ -180,7 +181,7 @@ namespace SmsGroup
 		public override void ViewWillAppear (bool animated)
 		{
 			base.ViewWillAppear (animated);
-			activityView.StartAnimating();
+			//activityView.StartAnimating();
 		}
 		
 		void HandleDoneClicked (object sender, EventArgs e)
@@ -264,6 +265,13 @@ namespace SmsGroup
 						{
 							InvokeOnMainThread(()=> {
 								detail.Sms = g;
+								if(detail.smsComposerViewController != null)
+								{
+									string message = detail.smsComposerViewController.UserMessage;
+									detail.smsComposerViewController.Dispose();
+									detail.smsComposerViewController = new SmsComposerViewController(Parent, g);
+									detail.smsComposerViewController.UserMessage = message;	
+								}
 								Parent.ReloadData();
 							});
 							// Updates UI here, if needed!

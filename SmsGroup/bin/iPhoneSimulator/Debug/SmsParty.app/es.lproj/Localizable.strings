@@ -1,0 +1,33 @@
+// MainScreenGroup
+"Existing groups" = "Grupos existentes";
+"SMS Party Free" = "SMS Party Gratuito";
+"SMS Party Free only allows a maximum of 5 groups to be created" = "SMS Party Gratuito le permite crear hasta 5 grupos máximo";
+
+// GroupDetailElement
+"contact" = "contacto";
+"contacts" = "contactos";
+
+// ContactListController
+"Group Name" = "Nombre del grupo";
+"The name that will best describe your group" = "El nombre que describirá mejor su grupo";
+"Name" = "Nombre";
+"Displays only contacts that have a mobile phone set" = "Únicamente fija los contactos que tienen un móvil";
+"All" = "Todos";
+"None" = "Ninguno";
+"Group Name Error" = "Error sobre el nombre del grupo";
+"You must specify a group name" = "Usted debe especificar un nombre de grupo";
+"Can't create the group because a group with the same name exists" = "Imposible crear el grupo porque un grupo con mismo nombre ya existe";
+"Can't update the group because a group with the same name exists" = "Imposible actualizar el grupo porque un grupo con mismo nombre ya existe";
+"Contact List" = "Lista de contactos";
+
+// SmsComposerViewController
+"Sms is being sent" = "Envío de SMS";
+"Your message will be sent soon" = "El SMS está en curso de envío";
+"Max Recipient" = "Número máximo de destinatarios por envío";
+"If you have too many recipients and would like to send by smaller group at a time,\r\nyou can modify the slider to specify the maximum number of recipients per text message" = "Si usted tiene muchos destinatarios y si usted quiere enviar su mensaje por paquete,\r\nusted puede limitar al número de destinatarios por envío modificando el slider";
+"Magic Expression\r\n(only available in full version)" = "Expresión mágica\r\n(únicamente en la versión completa)";
+"Magic Expression allows you to add first and/or last name of your recipient in your custom message.\r\nFor example if you want to wish happy new year to everyone but you want to write their name,\r\nYour message will look like this \r\n'Happy New Year /f!!'\r\n/f : add first name\r\n/l : add last name\r\nWhen Magic Expression is enabled, you can send only 1 sms at a time." =
+"Expresión mágica le permite añadir rápidamente el nombre y\o el nombre de cada uno de su destinatarios en su mensaje.\r\nPor ejemplo, si usted quiere felicitar por Año Nuevo a todo el mundo personalizando cada uno de su mensajes, su texto será la forma '¡Feliz Año Nuevo /f!'\r\n/f: añade el nombre \r\n/l: añade el apellido\r\ncuando Expresión Mágica es acelerada, usted puede enviar sólo a un solo destinatario a la vez.";
+"Max contacts per message" = "Número máximo de destinatarios por envío";
+"Compose your message" = "Escriba su mensaje";
+"Use Magic Expression" = "Expresión Mágica";
