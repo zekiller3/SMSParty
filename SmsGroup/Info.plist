@@ -4,8 +4,16 @@
 <dict>
 	<key>CFBundleDisplayName</key>
 	<string>SMS Party</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Images/paid/icon_72.png</string>
+		<string>Images/paid/icon_114.png</string>
+		<string>Images/paid/icon_57.png</string>
+		<string>Images/paid/icon_58.png</string>
+		<string>Images/paid/icon_29.png</string>
+	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.rkwon.smsparty.free</string>
+	<string>com.rkwon.smsparty</string>
 	<key>CFBundleVersion</key>
 	<string>0.9.0</string>
 	<key>MinimumOSVersion</key>
@@ -14,6 +22,8 @@
 	<array>
 		<integer>1</integer>
 	</array>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

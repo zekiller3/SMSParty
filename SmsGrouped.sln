@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsGrouped", "SmsGrouped\SmsGrouped.csproj", "{D0881A77-CA04-4BB7-AD21-043398817C64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sms Party", "SmsGroup\Sms Party.csproj", "{9E21BA99-308D-4028-BAD2-CC2E43D5DE4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsParty", "SmsGroup\SmsParty.csproj", "{9E21BA99-308D-4028-BAD2-CC2E43D5DE4B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Debug", "Debug\Debug.csproj", "{89153AC1-B870-4ECF-802C-7AD93B492D46}"
 EndProject
@@ -93,6 +93,6 @@ Global
 		{D0881A77-CA04-4BB7-AD21-043398817C64}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = SmsGroup\Sms Party.csproj
+		StartupItem = SmsGroup\SmsParty.csproj
 	EndGlobalSection
 EndGlobal

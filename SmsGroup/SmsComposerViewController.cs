@@ -159,6 +159,7 @@ namespace SmsGroup
 		{
 			base.ViewWillAppear (animated); 
 			Console.WriteLine("SmsComposer will appear");
+			this.View.BackgroundColor = UIColor.FromPatternImage(Settings.Background);
 #if LITE
 			int toolbarheight = this.Parent.NavigationController.ToolbarHidden ? 0 : 87;
 			Ad = AdManager.GetAd(0,UIScreen.MainScreen.ApplicationFrame.Height - toolbarheight - AdManager.Ad.Frame.Height);
@@ -172,13 +173,15 @@ namespace SmsGroup
 				float previousValue = this.Slider.Value;
 				this.Slider.MaxValue = this.editContactController.Phones.Count();
 				Console.WriteLine("Value {0}, MaxValue {1}", this.Slider.Value, this.Slider.MaxValue);
-				
+				this.Title = string.Format ("{0} ({1})",this.Sms.Name, this.Slider.MaxValue);
 				if(previousValue > this.Slider.MaxValue)
 				{
 					this.Slider.SetValue(this.Slider.MaxValue, true);
 					this.SliderCount.Text = this.Slider.MaxValue.ToString();
 					this.Title = string.Format ("{0} ({1})",this.Sms.Name, this.SliderCount.Text);
 				}
+				
+				
 			}
 			else
 			{
@@ -240,7 +243,9 @@ namespace SmsGroup
 		
 		partial void MagicExpressionValueChanged (MonoTouch.Foundation.NSObject sender)
 		{
-#if FULL
+#if LITE
+			return;
+#endif
 			if(MagicExpressionSwitch.On)
 			{
 				Slider.SetValue (1,true);
@@ -251,7 +256,6 @@ namespace SmsGroup
 			{
 				this.Slider.Enabled = true;
 			}
-#endif
 		}
 		
 		public void SendSms()

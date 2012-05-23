@@ -1,6 +1,7 @@
 using System;
 using MonoTouch.Foundation;
-
+using MonoTouch.UIKit;
+using System.Drawing;
 namespace SmsGroup
 {
 	public class Settings
@@ -29,6 +30,20 @@ namespace SmsGroup
 			set {defaultMaxRecipient = value;}
 		}
 		
+		private static UIImage background = null;
+		public static UIImage Background
+		{
+			get
+			{
+				if(background == null)
+				{
+					background = UIImage.FromBundle("Images/SMSBackground.jpg");
+				}
+				
+				return background;
+			}
+		}
+		
 		static Settings ()
 		{
 			string resourcePath = NSBundle.MainBundle.PathForResource(NSLocale.PreferredLanguages[0], "lproj");
@@ -40,6 +55,7 @@ namespace SmsGroup
 			localeBundle = NSBundle.FromPath(resourcePath);
 			
 		}
+		
 		
 		public static string GetLocalizedString(string key, string comment)
 		{

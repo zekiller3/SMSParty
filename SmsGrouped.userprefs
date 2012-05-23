@@ -1,43 +1,15 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="LITE|iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SmsGroup/ContactListController.cs">
+﻿<Properties GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="FULL|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SmsGroup/AppDelegate.cs">
     <Files>
-      <File FileName="SmsGroup/BaseDialogViewController.cs" Line="146" Column="4" />
-      <File FileName="SmsGroup/EditContactBeforeSMSController.cs" Line="62" Column="4" />
-      <File FileName="SmsGroup/ja.lproj/Localizable.strings" Line="10" Column="25" />
-      <File FileName="SmsGroup/UI/Delegate/SmsAdDelegate.cs" Line="41" Column="1" />
-      <File FileName="SmsGroup/ContactListController.cs" Line="273" Column="65" />
-      <File FileName="SmsGroup/Data/GroupPersonData.cs" Line="19" Column="3" />
-      <File FileName="SmsGroup/Data/Settings.cs" Line="6" Column="23" />
-      <File FileName="SmsGroup/UI/AdManager.cs" Line="15" Column="7" />
-      <File FileName="SmsGroup/es.lproj/Localizable.strings" Line="33" Column="45" />
-      <File FileName="SmsGroup/fr.lproj/Localizable.strings" Line="28" Column="313" />
-      <File FileName="../../remote/MonoTouch.Dialog/MonoTouch.Dialog/Elements.cs" Line="1969" Column="35" />
-      <File FileName="SmsGroup/SmsComposerViewController.cs" Line="26" Column="31" />
-      <File FileName="SmsGroup/Data/Contacts.cs" Line="55" Column="6" />
-      <File FileName="SmsGroup/MainScreenGroup.cs" Line="1" Column="1" />
-      <File FileName="SmsGroup/Data/SmsGroupObject.cs" Line="17" Column="37" />
-      <File FileName="../../remote/MonoTouch.Dialog/MonoTouch.Dialog/Elements/Json.cs" Line="24" Column="26" />
-      <File FileName="../../remote/MonoTouch.Dialog/MonoTouch.Dialog/DialogViewController.cs" Line="31" Column="24" />
-      <File FileName="SmsGroup/UI/GroupDetailElement.cs" Line="23" Column="8" />
+      <File FileName="SmsGroup/AppDelegate.cs" Line="35" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="MonoTouch.Dialog" expanded="True">
-            <Node name="References" expanded="True" />
-          </Node>
-          <Node name="Sms Party" expanded="True" selected="True">
-            <Node name="References" expanded="True" />
-            <Node name="Data" expanded="True" />
-            <Node name="en.lproj" expanded="True" />
-            <Node name="es.lproj" expanded="True" />
-            <Node name="fr.lproj" expanded="True" />
-            <Node name="ja.lproj" expanded="True" />
-            <Node name="UI" expanded="True">
-              <Node name="Delegate" expanded="True" />
-            </Node>
-            <Node name="SmsComposerViewController.cs" expanded="True" />
+          <Node name="Sms Party" expanded="True">
+            <Node name="Images" expanded="True" />
+            <Node name="AppDelegate.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -59,6 +31,8 @@
       <Breakpoint enabled="false" file="/Users/ronnykwon/github/local/SMSParty/SmsGroup/SmsComposerViewController.cs" line="144" />
       <Breakpoint enabled="false" file="/Users/ronnykwon/github/remote/MonoTouch.Dialog/MonoTouch.Dialog/DialogViewController.cs" line="677" />
       <Breakpoint file="/Users/ronnykwon/github/local/SMSParty/SmsGroup/UI/Delegate/SmsAdDelegate.cs" line="22" />
+      <Breakpoint file="/Users/ronnykwon/github/local/SMSParty/SmsGroup/SmsComposerViewController.cs" line="172" />
+      <Breakpoint file="/Users/ronnykwon/github/local/SMSParty/SmsGroup/AppDelegate.cs" line="34" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

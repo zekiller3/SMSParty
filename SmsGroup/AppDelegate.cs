@@ -30,6 +30,10 @@ namespace SmsGroup
 			
 			viewController = new UINavigationController ();
 			viewController.PushViewController(new MainScreenGroup(), true);
+			viewController.NavigationBar.Opaque = true;
+			if(viewController.NavigationBar.RespondsToSelector(new MonoTouch.ObjCRuntime.Selector("setBackgroundImage:forBarMetrics:"))){
+	//			viewController.NavigationBar.SetBackgroundImage(UIImage.FromBundle("Images/navigationbar.png"), UIBarMetrics.Default);
+			}
 			window.MakeKeyAndVisible ();
 			
 			AdManager.LoadBanner();

@@ -126,8 +126,14 @@ namespace SmsGroup
 		public override void ViewWillAppear (bool animated)
 		{
 			base.ViewWillAppear (animated);			
+			//this.searchBar.BackgroundImage = UIImage.FromBundle("Images/navigationbar.png");
 			this.NavigationController.ToolbarHidden = false;
 			this.ToolbarItems = defaultBarButtonItems;
+			
+			this.tableView.BackgroundColor = UIColor.Clear;
+			this.ParentViewController.View.BackgroundColor = UIColor.FromPatternImage(Settings.Background);
+			
+			//this.NavigationController.Toolbar.SetBackgroundImage(UIImage.FromBundle("Images/navigationbar.png"), UIToolbarPosition.Bottom, UIBarMetrics.Default);
 #if LITE
 			int toolbarheight = this.NavigationController.ToolbarHidden ? 0 : 87;
 			Ad = AdManager.GetAd(0,UIScreen.MainScreen.ApplicationFrame.Height - toolbarheight - AdManager.Ad.Frame.Height);
