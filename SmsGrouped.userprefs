@@ -1,15 +1,33 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="FULL|iPhoneSimulator" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SmsGroup/AppDelegate.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SmsGroup/UI/Delegate/SmsAdDelegate.cs">
     <Files>
-      <File FileName="SmsGroup/AppDelegate.cs" Line="35" Column="1" />
+      <File FileName="SmsGroup/AppDelegate.cs" Line="34" Column="1" />
+      <File FileName="SmsGroup/BaseDialogViewController.cs" Line="158" Column="29" />
+      <File FileName="SmsGroup/Data/Core/Reachability.cs" Line="55" Column="2" />
+      <File FileName="../../remote/MonoTouch.Dialog/MonoTouch.Dialog/DialogViewController.cs" Line="427" Column="5" />
+      <File FileName="SmsGroup/SmsComposerViewController.cs" Line="363" Column="3" />
+      <File FileName="SmsGroup/Data/Settings.cs" Line="54" Column="41" />
+      <File FileName="SmsGroup/UI/AdManager.cs" Line="44" Column="1" />
+      <File FileName="SmsGroup/BatchMFMessageComposeViewController.cs" Line="65" Column="3" />
+      <File FileName="SmsGroup/ContactListController.cs" Line="54" Column="19" />
+      <File FileName="SmsGroup/EditContactBeforeSMSController.cs" Line="63" Column="36" />
+      <File FileName="SmsGroup/Data/Contacts.cs" Line="194" Column="7" />
+      <File FileName="SmsGroup/MainScreenGroup.cs" Line="73" Column="43" />
+      <File FileName="SmsGroup/UI/GroupDetailElement.cs" Line="53" Column="45" />
+      <File FileName="SmsGroup/UI/Delegate/SmsAdDelegate.cs" Line="17" Column="18" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Sms Party" expanded="True">
-            <Node name="Images" expanded="True" />
-            <Node name="AppDelegate.cs" selected="True" />
+          <Node name="MonoTouch.Dialog" expanded="True">
+            <Node name="References" expanded="True" />
+          </Node>
+          <Node name="SmsParty" expanded="True" selected="True">
+            <Node name="Data" expanded="True" />
+            <Node name="UI" expanded="True">
+              <Node name="Delegate" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
@@ -23,16 +41,9 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint enabled="false" file="/Users/ronnykwon/Projects/SmsGrouped/SmsGroup/ContactListController.cs" line="229" />
-      <Breakpoint enabled="false" file="/Users/ronnykwon/Projects/SmsGrouped/SmsGroup/BatchMFMessageComposeViewController.cs" line="53" />
-      <Breakpoint enabled="false" file="/Users/ronnykwon/Projects/SmsGrouped/SmsGroup/SmsComposerViewController.cs" line="85" />
-      <Breakpoint enabled="false" file="/Users/ronnykwon/Projects/SmsGrouped/SmsGroup/SmsComposerViewController.cs" line="34" />
-      <Breakpoint enabled="false" file="/Users/ronnykwon/Projects/SmsGrouped/SmsGroup/SmsComposerViewController.cs" line="57" />
-      <Breakpoint enabled="false" file="/Users/ronnykwon/github/local/SMSParty/SmsGroup/SmsComposerViewController.cs" line="144" />
-      <Breakpoint enabled="false" file="/Users/ronnykwon/github/remote/MonoTouch.Dialog/MonoTouch.Dialog/DialogViewController.cs" line="677" />
-      <Breakpoint file="/Users/ronnykwon/github/local/SMSParty/SmsGroup/UI/Delegate/SmsAdDelegate.cs" line="22" />
-      <Breakpoint file="/Users/ronnykwon/github/local/SMSParty/SmsGroup/SmsComposerViewController.cs" line="172" />
-      <Breakpoint file="/Users/ronnykwon/github/local/SMSParty/SmsGroup/AppDelegate.cs" line="34" />
+      <Breakpoint file="/Users/ronnykwon/github/local/SMSParty/SmsGroup/SmsComposerViewController.cs" line="162" />
+      <Breakpoint file="/Users/ronnykwon/github/local/SMSParty/SmsGroup/SmsComposerViewController.cs" line="192" />
+      <Breakpoint file="/Users/ronnykwon/github/local/SMSParty/SmsGroup/UI/Delegate/SmsAdDelegate.cs" line="67" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

@@ -25,7 +25,8 @@
 "Your message will be sent soon" = "El SMS está en curso de envío";
 "Max Recipient" = "Número máximo de destinatarios por envío";
 "If you have too many recipients and would like to send by smaller group at a time,\r\nyou can modify the slider to specify the maximum number of recipients per text message" = "Si usted tiene muchos destinatarios y si usted quiere enviar su mensaje por paquete,\r\nusted puede limitar al número de destinatarios por envío modificando el slider";
-"Magic Expression\r\n(only available in full version)" = "Expresión mágica\r\n(únicamente en la versión completa)";
+"Magic Expression" = "Expresión mágica";
+"(only available in full version)" = "(únicamente en la versión completa)";
 "Magic Expression allows you to add first and/or last name of your recipient in your custom message.\r\nFor example if you want to wish happy new year to everyone but you want to write their name,\r\nYour message will look like this \r\n'Happy New Year /f!!'\r\n/f : add first name\r\n/l : add last name\r\nWhen Magic Expression is enabled, you can send only 1 sms at a time." =
 "Expresión mágica le permite añadir rápidamente el nombre y\o el nombre de cada uno de su destinatarios en su mensaje.\r\nPor ejemplo, si usted quiere felicitar por Año Nuevo a todo el mundo personalizando cada uno de su mensajes, su texto será la forma '¡Feliz Año Nuevo /f!'\r\n/f: añade el nombre \r\n/l: añade el apellido\r\ncuando Expresión Mágica es acelerada, usted puede enviar sólo a un solo destinatario a la vez.";
 "Max contacts per message" = "Número máximo de destinatarios por envío";

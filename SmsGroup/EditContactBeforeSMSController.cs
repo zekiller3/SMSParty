@@ -35,21 +35,12 @@ namespace SmsGroup
 				return null;
 			}
 		}
-		
-		public EditContactBeforeSMSController (SmsGroupObject g) : base (true, false)
+		public SmsGroupObject Sms {get;set;}
+		public EditContactBeforeSMSController (SmsGroupObject g) : base (true, ToolbarItemOption.Refresh, false)
 		{
 			Root = new RootElement("Edit");
 			contact = new SegmentedSection("Contacts");
-			foreach(var person in g.Persons)
-			{
-				foreach(var phone in person.GetPhones())
-				{			
-					if(phone.Label.ToString().ToLower().Contains("mobile")){
-						ABPersonElement el = new ABPersonElement(phone.Value, true, person);
-						contact.Add(el);
-					}
-				}
-			}
+			this.Sms = g;
 			
 			contact.SegmentedControl.InsertSegment(
 				Settings.GetLocalizedString("All", LocalizedKey),
@@ -59,14 +50,21 @@ namespace SmsGroup
 				1,true);
 			contact.SegmentedControl.ValueChanged += HandleContactSegmentedControlAllTouchEvents;
 			this.Root.Add(contact);
-			
-			this.defaultBarButtonItems = new UIBarButtonItem[0];
+			Initialize();
 		}
 
+		public void Initialize()
+		{
+			if(contact != null)
+			{
+				contact.Clear();
+			}
+			
+			contact.AddAll(Contacts.GetABPersonElementFrom(this.Sms, true));
+		}
+		
 		void HandleContactSegmentedControlAllTouchEvents (object sender, EventArgs e)
 		{
-			Console.WriteLine("EditContact SegmentedControl : {0}", this.contact.SegmentedControl.SelectedSegment);
-			
 			switch(this.contact.SegmentedControl.SelectedSegment)
 			{
 				case SEGMENT_ALL:
@@ -105,6 +103,17 @@ namespace SmsGroup
 				p.IsChecked = false;
 				
 			}
+		}
+		
+		public override void HandleRefreshClicked (object sender, EventArgs e)
+		{
+			ThreadPool.QueueUserWorkItem ((evt) => {
+				Contacts.RefreshAddressBook();
+				InvokeOnMainThread(()=>{ 
+					Initialize();
+					this.ReloadData();
+				});
+			});
 		}
 	}
 }

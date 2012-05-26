@@ -36,7 +36,9 @@ namespace SmsGroup
 			}
 			window.MakeKeyAndVisible ();
 			
+#if LITE
 			AdManager.LoadBanner();
+#endif
 			
 			// On iOS5 we use the new window.RootViewController, on older versions, we add the subview
             if (UIDevice.CurrentDevice.CheckSystemVersion (5, 0))

@@ -1,0 +1,223 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FE030000000000000000000 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 1DBADB800000000000000000 /* AppDelegate.h */; };
+		3977B4000000000000000000 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 55348C800000000000000000 /* Default.png */; };
+		3FD417800000000000000000 /* SmsComposerViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 5B90F0000000000000000000 /* SmsComposerViewController.h */; };
+		6CAA57000000000000000000 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88672F800000000000000000 /* CoreGraphics.framework */; };
+		70F165000000000000000000 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CAE3D800000000000000000 /* Default@2x.png */; };
+		774DC8800000000000000000 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 930AA1000000000000000000 /* AppDelegate.m */; };
+		A42408000000000000000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE0E0800000000000000000 /* Foundation.framework */; };
+		A86B16000000000000000000 /* SmsComposerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C427EE800000000000000000 /* SmsComposerViewController.xib */; };
+		DB9DB9000000000000000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F75A91800000000000000000 /* UIKit.framework */; };
+		EC9D8E000000000000000000 /* SmsComposerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A668000000000000000000 /* SmsComposerViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1DBADB800000000000000000 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		55348C800000000000000000 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		5B90F0000000000000000000 /* SmsComposerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmsComposerViewController.h; sourceTree = "<group>"; };
+		85A668000000000000000000 /* SmsComposerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmsComposerViewController.m; sourceTree = "<group>"; };
+		88672F800000000000000000 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8CAE3D800000000000000000 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		930AA1000000000000000000 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9DC7A4800000000000000000 /* SmsParty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmsParty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFE0E0800000000000000000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C427EE800000000000000000 /* SmsComposerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmsComposerViewController.xib; sourceTree = "<group>"; };
+		F75A91800000000000000000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4434B7800000000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB9DB9000000000000000000 /* UIKit.framework in Frameworks */,
+				A42408000000000000000000 /* Foundation.framework in Frameworks */,
+				6CAA57000000000000000000 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F854EC00000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				A9183BC00000000000000000 /* SmsParty */,
+				A2BBD8400000000000000000 /* Frameworks */,
+				FC4EC5400000000000000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A2BBD8400000000000000000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F75A91800000000000000000 /* UIKit.framework */,
+				BFE0E0800000000000000000 /* Foundation.framework */,
+				88672F800000000000000000 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9183BC00000000000000000 /* SmsParty */ = {
+			isa = PBXGroup;
+			children = (
+				1DBADB800000000000000000 /* AppDelegate.h */,
+				55348C800000000000000000 /* Default.png */,
+				8CAE3D800000000000000000 /* Default@2x.png */,
+				5B90F0000000000000000000 /* SmsComposerViewController.h */,
+				C427EE800000000000000000 /* SmsComposerViewController.xib */,
+				D108C6400000000000000000 /* Supporting Files */,
+			);
+			name = SmsParty;
+			sourceTree = "<group>";
+		};
+		D108C6400000000000000000 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				930AA1000000000000000000 /* AppDelegate.m */,
+				85A668000000000000000000 /* SmsComposerViewController.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC4EC5400000000000000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DC7A4800000000000000000 /* SmsParty.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C35BE0000000000000000000 /* SmsParty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2A2D1000000000000000000 /* Build configuration list for PBXNativeTarget "SmsParty" */;
+			buildPhases = (
+				F0FE2E000000000000000000 /* Sources */,
+				4434B7800000000000000000 /* Frameworks */,
+				CBB068000000000000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmsParty;
+			productName = SmsParty;
+			productReference = 9DC7A4800000000000000000 /* SmsParty.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D7DB2000000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 5F6C47800000000000000000 /* Build configuration list for PBXProject "SmsParty" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4F854EC00000000000000000;
+			productRefGroup = FC4EC5400000000000000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C35BE0000000000000000000 /* SmsParty */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CBB068000000000000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A86B16000000000000000000 /* SmsComposerViewController.xib in Resources */,
+				70F165000000000000000000 /* Default@2x.png in Resources */,
+				3977B4000000000000000000 /* Default.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0FE2E000000000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE030000000000000000000 /* AppDelegate.h in Sources */,
+				774DC8800000000000000000 /* AppDelegate.m in Sources */,
+				3FD417800000000000000000 /* SmsComposerViewController.h in Sources */,
+				EC9D8E000000000000000000 /* SmsComposerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4A911B000000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = MonoTouch;
+		};
+		664DF3800000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				PRODUCT_NAME = SmsParty;
+				WRAPPER_EXTENSION = app;
+			};
+			name = MonoTouch;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F6C47800000000000000000 /* Build configuration list for PBXProject "SmsParty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A911B000000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+		B2A2D1000000000000000000 /* Build configuration list for PBXNativeTarget "SmsParty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				664DF3800000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D7DB2000000000000000000 /* Project object */;
+}

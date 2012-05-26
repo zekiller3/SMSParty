@@ -7,21 +7,20 @@ using MonoTouch.UIKit;
 using MonoTouch.Dialog;
 using System.Threading;
 using MonoTouch.AddressBookUI;
+using System.Drawing;
 namespace SmsGroup
 {
 	public partial class MainScreenGroup : BaseDialogViewController
 	{
 		private const string LocalizedKey = "MainScreenGroup";
 		public Section ListGroupSection {get;set;}
-		public MainScreenGroup () : base (true)
+		public MainScreenGroup () : base (true, ToolbarItemOption.Add)
 		{
 #if LITE
 			Root = new RootElement("SMS Party Free");
 #else
 			Root = new RootElement("SMS Party");
 #endif
-			this.ListGroupSection = new Section(Settings.GetLocalizedString("Existing groups", LocalizedKey));
-			Root.Add(this.ListGroupSection);
 		}
 		
 		public void LoadGroups()
@@ -42,6 +41,13 @@ namespace SmsGroup
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			// Label Header
+			if(this.ListGroupSection == null){
+				var header = Settings.GenerateHeaderFooter("Existing groups", LocalizedKey);
+				
+				this.ListGroupSection = new Section(header);
+				Root.Add(this.ListGroupSection);
+			}
 //			UIBarButtonItem contact = new UIBarButtonItem("Contact",UIBarButtonItemStyle.Bordered, ShowAddressBook);
 //			UIBarButtonItem flex = new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace);
 //			UIBarButtonItem addButton =
@@ -95,7 +101,6 @@ namespace SmsGroup
 #endif
 			CreateButtonTapped();
 		}
-		
 		
 	}
 }

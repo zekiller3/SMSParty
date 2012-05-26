@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Threading;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.Dialog;
@@ -9,6 +9,14 @@ using MonoTouch.iAd;
 using System.Drawing;
 namespace SmsGroup
 {
+	[Flags]
+	public enum ToolbarItemOption
+	{
+		None = 0x0,
+		Add = 0x1,
+		Refresh = 0x2
+	}
+	
 	public abstract class BaseDialogViewController : DialogViewController
 	{
 		public class MainScreenEditViewController : DialogViewController.Source
@@ -49,11 +57,12 @@ namespace SmsGroup
 		protected ADBannerView Ad {get;set;}
 		protected bool EditEnabled {get;set;}
 		protected DialogViewController Dialog {get;set;}
-		public BaseDialogViewController (bool isPushed, bool editEnabled = true) : base (UITableViewStyle.Grouped, null, isPushed)
+		
+		public BaseDialogViewController (bool isPushed, ToolbarItemOption options, bool editEnabled = true) : base (UITableViewStyle.Grouped, null, isPushed)
 		{
 			EnableSearch = true;
 			AutoHideSearch = false;
-			defaultBarButtonItems = DefaultBarButton();
+			defaultBarButtonItems = DefaultBarButton(options);
 			EditEnabled = editEnabled;
 			if(EditEnabled){
 				EditBarButtonItems  = new UIBarButtonItem[0];
@@ -67,18 +76,27 @@ namespace SmsGroup
 		/// <returns>
 		/// The bar button.
 		/// </returns>
-		protected UIBarButtonItem[] DefaultBarButton()
+		protected UIBarButtonItem[] DefaultBarButton(ToolbarItemOption options)
 		{
-			UIBarButtonItem space = new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace);
-			UIBarButtonItem addButton = new UIBarButtonItem(UIBarButtonSystemItem.Add);
-			addButton.Clicked += HandleAddButtonClicked;
-			addButton.SetBackgroundVerticalPositionAdjustment(UIScreen.MainScreen.Bounds.Width - 50, UIBarMetrics.Default);
-			UIBarButtonItem[] buttons = new UIBarButtonItem[]{
-				space,
-				addButton
-			};
+			List<UIBarButtonItem> result = new List<UIBarButtonItem>();
+			if(options.HasFlag(ToolbarItemOption.Refresh))
+			{
+				UIBarButtonItem refresh = new UIBarButtonItem(UIBarButtonSystemItem.Refresh);
+				refresh.Clicked += HandleRefreshClicked;
+				result.Add(refresh);
+			}
 			
-			return buttons;
+			if(options.HasFlag(ToolbarItemOption.Add))
+			{
+				UIBarButtonItem space = new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace);
+				UIBarButtonItem addButton = new UIBarButtonItem(UIBarButtonSystemItem.Add);
+				addButton.Clicked += HandleAddButtonClicked;
+				addButton.SetBackgroundVerticalPositionAdjustment(UIScreen.MainScreen.Bounds.Width - 50, UIBarMetrics.Default);
+				result.Add(space);
+				result.Add(addButton);
+			}
+			
+			return result.ToArray();
 		}
 		
 		#region UI
@@ -134,8 +152,11 @@ namespace SmsGroup
 			this.ParentViewController.View.BackgroundColor = UIColor.FromPatternImage(Settings.Background);
 			
 			//this.NavigationController.Toolbar.SetBackgroundImage(UIImage.FromBundle("Images/navigationbar.png"), UIToolbarPosition.Bottom, UIBarMetrics.Default);
+			
+			
 #if LITE
 			int toolbarheight = this.NavigationController.ToolbarHidden ? 0 : 87;
+			Console.WriteLine("Will load add at {0}:{1}", 0, UIScreen.MainScreen.ApplicationFrame.Height - toolbarheight - AdManager.Ad.Frame.Height );
 			Ad = AdManager.GetAd(0,UIScreen.MainScreen.ApplicationFrame.Height - toolbarheight - AdManager.Ad.Frame.Height);
 			Ad.Delegate = new SmsAdDelegate(this);
 			//Console.WriteLine("TableView Height before : " + this.tableView.Frame.Size.Height);
@@ -179,5 +200,7 @@ namespace SmsGroup
 		}
 		
 		public virtual void HandleAddButtonClicked (object sender, EventArgs e){}
+		
+		public virtual void HandleRefreshClicked (object sender, EventArgs e){}
 	}
 }

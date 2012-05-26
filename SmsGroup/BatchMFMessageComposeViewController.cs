@@ -43,7 +43,6 @@ namespace SmsGroup
 				
 				person = LeftRecipients.Pop();
 				string rec = person.GetPhones().First(x => x.Label.ToString().ToLower().Contains("mobile")).Value;
-				Console.WriteLine("POP {0}, LEFT {1}", rec, LeftRecipients.Count);
 				tempRecipients.Add(rec);
 			}
 			
@@ -56,17 +55,22 @@ namespace SmsGroup
 					.Replace(Settings.MagicExpressionLastName, person.LastName);
 			}
 #endif	
-			Console.WriteLine("ViewWillAppear called");
 			base.ViewWillAppear (animated);
 		}
 	}
 	
 	public class CustomMessageComposeDelegate : MFMessageComposeViewControllerDelegate
 	{
+		
+		
 		public override void Finished (MFMessageComposeViewController controller, MessageComposeResult result)
 		{
-			
-			
+			Console.WriteLine("Custom, Finished");
+			BatchMFMessageComposeViewController c = controller as BatchMFMessageComposeViewController;
+			if(c != null && c.LeftRecipients.Count == 0)
+			{
+				c.Dispose();
+			}
 		}
 	}
 }

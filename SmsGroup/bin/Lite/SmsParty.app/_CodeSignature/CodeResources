@@ -20,6 +20,10 @@
 		<data>
 		KFTupqYXyl4OpLf5W2X1L9SCWRQ=
 		</data>
+		<key>Images/SMSBackground.jpg</key>
+		<data>
+		LvWL82BNAWTNgmwMdGIJTWIhhHc=
+		</data>
 		<key>Images/button_0.png</key>
 		<data>
 		sjytzPPUJ7tKsTi1jFncg+aPdak=
@@ -28,13 +32,41 @@
 		<data>
 		sjytzPPUJ7tKsTi1jFncg+aPdak=
 		</data>
+		<key>Images/navigationbar.png</key>
+		<data>
+		9BhJoqOqJk74eTlYXPH9uCic2RQ=
+		</data>
+		<key>Images/paid/icon_114.png</key>
+		<data>
+		hsQGwInCibP574fKLw/XrhtcvpI=
+		</data>
+		<key>Images/paid/icon_29.png</key>
+		<data>
+		DsKHfGG9uajnRckXVedXSlplCfo=
+		</data>
+		<key>Images/paid/icon_512.png</key>
+		<data>
+		3egVdWbiversB85ONazIZiIuCFA=
+		</data>
+		<key>Images/paid/icon_57.png</key>
+		<data>
+		RUMrazHbv0RZDZYWjDNQIe+RJkU=
+		</data>
+		<key>Images/paid/icon_58.png</key>
+		<data>
+		dzKDzws9f5VXsEcTFUZjxgXgpOM=
+		</data>
+		<key>Images/paid/icon_72.png</key>
+		<data>
+		emlK046eYmP6Bmi2M+i45EO2VVY=
+		</data>
 		<key>Mono.Security.dll</key>
 		<data>
-		3CBLgqOoqxPKcSZZONU8A2NapxQ=
+		ROETMWmtOYlNrj6uEgqtBQKiwT0=
 		</data>
 		<key>MonoTouch.Dialog.dll</key>
 		<data>
-		JAgYdH1H1qxz+WhfivNTvr3lxu8=
+		lX0VC6z0Vtwm5MPLb4PPwnxJ1fM=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -42,43 +74,43 @@
 		</data>
 		<key>SmsComposerViewController.nib</key>
 		<data>
-		IYNMgTWnI+5QScaGoOZLLACwkK0=
+		JO9EngU6YC5msrZdkXSGGVvG7A0=
 		</data>
 		<key>SmsGroup.exe</key>
 		<data>
-		nnE5Q2LCtWbnJdU5KUohe9Go2xA=
+		bRNjQbQnZXRX25Zv2PyGTPWfpuo=
 		</data>
 		<key>System.Core.dll</key>
 		<data>
-		0eVRbOgcucb+zLrm/jOL1ZUcY2w=
+		X3VwymAIc9/6594gU+u5wTN39AU=
 		</data>
 		<key>System.Json.dll</key>
 		<data>
-		dUgZV8ZaYnDL8416/mbjdSrFdPs=
+		S4qRZ4m1rbz+jDoYwzpTKO8bbHI=
 		</data>
 		<key>System.Runtime.Serialization.dll</key>
 		<data>
-		+YVS2MMvwAn05ie7sIuugVz1lkc=
+		XvtoaEclVnswAEKHd09dUHKs88U=
 		</data>
 		<key>System.ServiceModel.Web.dll</key>
 		<data>
-		4CIQ81wptnF7dJQZ293qJB9YuqE=
+		Ar+74hBOS5vnu8B91/RfTonD/g8=
 		</data>
 		<key>System.ServiceModel.dll</key>
 		<data>
-		k16A4cb2gayF9WcQvJPFkx11jJ8=
+		DFPPfyy6ZK6OLzanfXAdoGH9Txg=
 		</data>
 		<key>System.Xml.dll</key>
 		<data>
-		T9DjmzNajYF1lhFVEouaIIMbvQA=
+		nZZmrSxpqoCamVprb9mZSs1BDRQ=
 		</data>
 		<key>System.dll</key>
 		<data>
-		JzEapI/+DGx5tx9CdDJVfvECses=
+		eZV8QvgKXWKqxbF3uIYxC0okK5o=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		BpYIeFMHVYCRqHpf3LzywH9oqXU=
+		Shdmppalyv78HB9xSsivUKckMHU=
 		</data>
 		<key>en.lproj/Localizable.strings</key>
 		<data>
@@ -86,23 +118,43 @@
 		</data>
 		<key>es.lproj/Localizable.strings</key>
 		<data>
-		7LQKSP581v/bq9K5Hhv6VYGZ2pY=
+		GvcEbc8UVEZLX5uIjYVevOeF/zw=
 		</data>
 		<key>fr.lproj/Localizable.strings</key>
 		<data>
-		dtqrlxWNVakMpdHZ27hNr6zWJ8M=
+		jl+0YAZnFqZx23SlkiNtMbJXdKk=
+		</data>
+		<key>icon_114.png</key>
+		<data>
+		hsQGwInCibP574fKLw/XrhtcvpI=
+		</data>
+		<key>icon_29.png</key>
+		<data>
+		DsKHfGG9uajnRckXVedXSlplCfo=
+		</data>
+		<key>icon_57.png</key>
+		<data>
+		RUMrazHbv0RZDZYWjDNQIe+RJkU=
+		</data>
+		<key>icon_58.png</key>
+		<data>
+		dzKDzws9f5VXsEcTFUZjxgXgpOM=
+		</data>
+		<key>icon_72.png</key>
+		<data>
+		emlK046eYmP6Bmi2M+i45EO2VVY=
 		</data>
 		<key>ja.lproj/Localizable.strings</key>
 		<data>
-		HvFxBbbvEgEKCDrzvUBYp+h+UTI=
+		W5go32hGpwfCSgGqbxt2U6vFNaA=
 		</data>
 		<key>monotouch.dll</key>
 		<data>
-		l1RDnHZPBXbtisz6Gp9AlcWFZXk=
+		xQ7ADkjXAfuhU1iK9D9Df6jnsoA=
 		</data>
 		<key>mscorlib.dll</key>
 		<data>
-		5P98KFuzE4KztpiSxbyfzr+Qea4=
+		Dx8VPNY7HUi67QaJVhrrPQTzLwY=
 		</data>
 	</dict>
 	<key>rules</key>

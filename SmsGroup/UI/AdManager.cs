@@ -44,6 +44,7 @@ namespace SmsGroup
 			if(Ad.Frame.X != x || Ad.Frame.Y != y)
 			{
 				Ad.Frame = new RectangleF(new PointF(x,y), Ad.Frame.Size);
+				ad.Hidden = false;
 			}
 			
 			return Ad;

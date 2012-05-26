@@ -38,20 +38,21 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <DefineConstants>DEBUG;FULL</DefineConstants>
+    <DefineConstants>DEBUG;LITE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer: ronny kwon (3TDT2NB4V2)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchProfiling>true</MtouchProfiling>
-    <CodesignProvision>90E9AB80-9727-4F9C-9F7C-02C3F5B7FFC5</CodesignProvision>
+    <CodesignProvision>60B96F81-AC6C-41C9-B5A5-3FF0E306C586</CodesignProvision>
     <MtouchI18n />
     <BuildIpa>true</BuildIpa>
     <IpaMetadata>Info.plist</IpaMetadata>
     <IpaPackageName>com.rkwon.smsparty</IpaPackageName>
     <MtouchLink>None</MtouchLink>
     <OutputPath>bin\Debug</OutputPath>
+    <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -70,8 +71,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
-    <CodesignProvision>90E9AB80-9727-4F9C-9F7C-02C3F5B7FFC5</CodesignProvision>
+    <CodesignKey>iPhone Distribution: ronny kwon</CodesignKey>
+    <CodesignProvision>4C0EB064-41A5-4FDC-BAC6-4386C8C09114</CodesignProvision>
     <MtouchI18n />
     <IpaPackageName />
     <MtouchUseLlvm>true</MtouchUseLlvm>
@@ -81,18 +82,19 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'LITE|iPhone' ">
     <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <DefineConstants>DEBUG;LITE;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer: ronny kwon (3TDT2NB4V2)</CodesignKey>
-    <CodesignProvision>7AD61E5A-EF8F-4E21-9D65-66B07F87858B</CodesignProvision>
+    <CodesignProvision>60B96F81-AC6C-41C9-B5A5-3FF0E306C586</CodesignProvision>
     <IpaPackageName />
     <MtouchI18n />
-    <MtouchUseLlvm>true</MtouchUseLlvm>
     <MtouchArch>ARMv7</MtouchArch>
     <OutputPath>bin\Lite</OutputPath>
+    <MtouchSdkVersion>5.0</MtouchSdkVersion>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'FULL|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>

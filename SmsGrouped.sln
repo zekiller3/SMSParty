@@ -53,10 +53,8 @@ Global
 		{89153AC1-B870-4ECF-802C-7AD93B492D46}.Debug|iPhone.Build.0 = Debug|iPhone
 		{89153AC1-B870-4ECF-802C-7AD93B492D46}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{89153AC1-B870-4ECF-802C-7AD93B492D46}.FULL|iPhone.ActiveCfg = FULL|iPhone
-		{89153AC1-B870-4ECF-802C-7AD93B492D46}.FULL|iPhone.Build.0 = FULL|iPhone
 		{89153AC1-B870-4ECF-802C-7AD93B492D46}.FULL|iPhoneSimulator.ActiveCfg = FULL|iPhoneSimulator
 		{89153AC1-B870-4ECF-802C-7AD93B492D46}.LITE|iPhone.ActiveCfg = LITE|iPhone
-		{89153AC1-B870-4ECF-802C-7AD93B492D46}.LITE|iPhone.Build.0 = LITE|iPhone
 		{89153AC1-B870-4ECF-802C-7AD93B492D46}.LITE|iPhoneSimulator.ActiveCfg = LITE|iPhoneSimulator
 		{89153AC1-B870-4ECF-802C-7AD93B492D46}.Release|iPhone.ActiveCfg = Release|iPhone
 		{89153AC1-B870-4ECF-802C-7AD93B492D46}.Release|iPhone.Build.0 = Release|iPhone
@@ -82,10 +80,8 @@ Global
 		{D0881A77-CA04-4BB7-AD21-043398817C64}.Debug|iPhone.Build.0 = Debug|iPhone
 		{D0881A77-CA04-4BB7-AD21-043398817C64}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{D0881A77-CA04-4BB7-AD21-043398817C64}.FULL|iPhone.ActiveCfg = FULL|iPhone
-		{D0881A77-CA04-4BB7-AD21-043398817C64}.FULL|iPhone.Build.0 = FULL|iPhone
 		{D0881A77-CA04-4BB7-AD21-043398817C64}.FULL|iPhoneSimulator.ActiveCfg = FULL|iPhoneSimulator
 		{D0881A77-CA04-4BB7-AD21-043398817C64}.LITE|iPhone.ActiveCfg = LITE|iPhone
-		{D0881A77-CA04-4BB7-AD21-043398817C64}.LITE|iPhone.Build.0 = LITE|iPhone
 		{D0881A77-CA04-4BB7-AD21-043398817C64}.LITE|iPhoneSimulator.ActiveCfg = LITE|iPhoneSimulator
 		{D0881A77-CA04-4BB7-AD21-043398817C64}.Release|iPhone.ActiveCfg = Release|iPhone
 		{D0881A77-CA04-4BB7-AD21-043398817C64}.Release|iPhone.Build.0 = Release|iPhone

@@ -17,7 +17,6 @@ namespace SmsGroup
 			// this.SegmentedControl.ControlStyle = UISegmentedControlStyle.Bezeled;
 			this.SegmentedControl.ControlStyle = UISegmentedControlStyle.Bar;
 	    }
-	
 		
 	    private void InitializeSection()
 	    {
@@ -31,10 +30,6 @@ namespace SmsGroup
 			SegmentedControl.AutoresizingMask = UIViewAutoresizing.None;
 			v.AddSubview(SegmentedControl);
 			this.HeaderView = v;
-			//this.HeaderView = SegmentedControl;
-			
-			
-	        //this.HeaderView.AddSubview(SegmentedControl);
 	    }
 	}
 }

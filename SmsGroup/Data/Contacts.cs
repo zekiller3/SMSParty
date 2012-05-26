@@ -25,7 +25,7 @@ namespace SmsGroup
 				Load();
 			}catch(Exception ex)
 			{
-				Console.WriteLine(ex);
+				//Console.WriteLine(ex);
 				UIAlertView alert = new UIAlertView("Error Load()", ex.ToString(), null, "OK");
 				alert.Show();
 			}
@@ -173,6 +173,36 @@ namespace SmsGroup
 		{
 			
 		}
+		
+		public static List<Element> GetABPersonElementFrom(SmsGroupObject sms, bool returnOnlySelected = false)
+		{
+			List<Element> personElements = new List<Element>();
+			foreach(var a in Contacts.AddressBook.Where (x => x.Type == ABRecordType.Person))
+			{
+				ABPerson person = a as ABPerson;
+				
+				foreach(var phone in person.GetPhones())
+				{
+					if(phone.Label.ToString().ToLower().Contains("mobile")){
+						bool isInGroup = false;
+						try{
+							isInGroup = (sms != null && sms.Persons.Any(x => x.Id == a.Id));
+						}catch(Exception ex)
+						{
+							//Console.WriteLine(ex);
+						}
+						
+						if(returnOnlySelected && !isInGroup) break;
+						ABPersonElement el = new ABPersonElement(phone.Value, isInGroup, person);
+						personElements.Add(el);	
+					}
+				}
+			}
+			
+			return personElements.OrderBy(x => ((ABPersonElement)x).Person.FirstName).OrderByDescending(x => ((ABPersonElement)x).IsChecked ).ToList<Element>();
+		}
+		
+		
 	}
 }
 

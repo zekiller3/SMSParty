@@ -152,19 +152,20 @@ namespace SmsGroup
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			Console.WriteLine("SmsComposer did load");
 		}
 		
 		public override void ViewWillAppear (bool animated)
 		{
 			base.ViewWillAppear (animated); 
-			Console.WriteLine("SmsComposer will appear");
 			this.View.BackgroundColor = UIColor.FromPatternImage(Settings.Background);
 #if LITE
-			int toolbarheight = this.Parent.NavigationController.ToolbarHidden ? 0 : 87;
-			Ad = AdManager.GetAd(0,UIScreen.MainScreen.ApplicationFrame.Height - toolbarheight - AdManager.Ad.Frame.Height);
-			Ad.Delegate = new SmsAdDelegate();
-			this.Add(Ad);
+			ThreadPool.QueueUserWorkItem((e) => {
+				Thread.Sleep(100);
+				int toolbarheight = this.Parent.NavigationController.ToolbarHidden ? 0 : 87;
+				Ad = AdManager.GetAd(0,UIScreen.MainScreen.ApplicationFrame.Height - toolbarheight - AdManager.Ad.Frame.Height);
+				Ad.Delegate = new SmsAdDelegate();
+				InvokeOnMainThread(()=> { this.Add(Ad); });
+			});
 #endif
 			
 			// contacts might have changed, we need to update UI
@@ -172,7 +173,6 @@ namespace SmsGroup
 			{
 				float previousValue = this.Slider.Value;
 				this.Slider.MaxValue = this.editContactController.Phones.Count();
-				Console.WriteLine("Value {0}, MaxValue {1}", this.Slider.Value, this.Slider.MaxValue);
 				this.Title = string.Format ("{0} ({1})",this.Sms.Name, this.Slider.MaxValue);
 				if(previousValue > this.Slider.MaxValue)
 				{
@@ -280,36 +280,48 @@ namespace SmsGroup
 		void HandleSmscontrollerFinished (object sender, MFMessageComposeResultEventArgs e)
 		{
 			BatchMFMessageComposeViewController batchController = sender as BatchMFMessageComposeViewController;
+			
 			switch (e.Result)
 			{
-				case MessageComposeResult.Sent:
-				if(batchController.HasRecipientsLeft)
-				{
-					batchController.DismissModalViewControllerAnimated(false);
-					Thread.Sleep(100);
-					BatchMFMessageComposeViewController c = new BatchMFMessageComposeViewController(
-						batchController.Parent,
-						batchController.LeftRecipients.ToArray(), 
-						this.Message.Text,
-						batchController.BatchSize,
-						batchController.MagicExpressionEnabled);
-					c.Finished += HandleSmscontrollerFinished;
-					this.Parent.NavigationController.PresentModalViewController(c, true);
-				}
-				else
-				{
-					UIAlertView alert = new UIAlertView(
-						Settings.GetLocalizedString("Sms is being sent", LocalizedKey),
-						Settings.GetLocalizedString("Your message will be sent soon", LocalizedKey),
-						null, "OK");
-					alert.Show();
-					batchController.DismissModalViewControllerAnimated(true);
-				}
 				
-				break;
+				case MessageComposeResult.Sent:
+					
+					if(batchController.HasRecipientsLeft)
+					{
+						batchController.DismissModalViewControllerAnimated(false);
+						Thread.Sleep(100);
+						BatchMFMessageComposeViewController c = new BatchMFMessageComposeViewController(
+							batchController.Parent,
+							batchController.LeftRecipients.ToArray(), 
+							this.Message.Text,
+							batchController.BatchSize,
+							batchController.MagicExpressionEnabled);
+						c.Finished += HandleSmscontrollerFinished;
+						batchController.Dispose();
+						this.Parent.NavigationController.PresentModalViewController(c, true);
+					}
+					else
+					{
+						batchController.ResignFirstResponder();
+						batchController.MessageComposeDelegate.Dispose();
+						batchController.DismissModalViewControllerAnimated(false);
+						batchController.Dispose();
+						ThreadPool.QueueUserWorkItem ((evt) => {
+							Thread.Sleep(500);
+							UIAlertView alert = new UIAlertView(
+								Settings.GetLocalizedString("Sms is being sent", LocalizedKey),
+								Settings.GetLocalizedString("Your message will be sent soon", LocalizedKey),
+								null, "OK");
+							this.InvokeOnMainThread(()=> { alert.Show();});
+						});
+						
+					}
+					break;
 				
 				case MessageComposeResult.Cancelled:
-					batchController.DismissModalViewControllerAnimated(true);
+					batchController.ResignFirstResponder();
+					batchController.DismissModalViewControllerAnimated(false);
+					batchController.Dispose();
 					break;
 				default:
 					break; 
@@ -333,7 +345,15 @@ namespace SmsGroup
 		public void ShowMagicExpressionInfo()
 		{
 			UIAlertView alert = new UIAlertView(
-				Settings.GetLocalizedString("Magic Expression\r\n(only available in full version)", LocalizedKey),
+#if LITE
+				string.Format("{0}{1}",
+			              Settings.GetLocalizedString("Magic Expression", LocalizedKey),
+			              "\r\n" + Settings.GetLocalizedString("(only available in full version)", LocalizedKey)),
+#else
+			    
+				Settings.GetLocalizedString("Magic Expression", LocalizedKey),
+#endif
+				
 		   		Settings.GetLocalizedString("Magic Expression allows you to add first and/or last name of your recipient in your custom message.\r\nFor example if you want to wish happy new year to everyone but you want to write their name,\r\nYour message will look like this \r\n'Happy New Year /f!!'\r\n/f : add first name\r\n/l : add last name\r\nWhen Magic Expression is enabled, you can send only 1 sms at a time.", LocalizedKey),
 				null, "OK");
 			alert.Show();

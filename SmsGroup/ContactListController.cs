@@ -25,7 +25,7 @@ namespace SmsGroup
 		/// </summary>
 		private bool isEditing = false;
 		private GroupDetailElement smsGroup = null;
-		public ContactListController (MainScreenGroup parent, GroupDetailElement smsGroup = null) : base (true, false)
+		public ContactListController (MainScreenGroup parent, GroupDetailElement smsGroup = null) : base (true, ToolbarItemOption.Refresh ,false)
 		{
 			this.EnableSearch = true;
 			this.AutoHideSearch = true;
@@ -34,9 +34,8 @@ namespace SmsGroup
 			
 			Root = new RootElement (Settings.GetLocalizedString("Contact List", LocalizedKey));
 			this.isEditing = this.smsGroup != null;
-			Section groupName = new Section(
-				Settings.GetLocalizedString("Group Name", LocalizedKey),
-			    Settings.GetLocalizedString("The name that will best describe your group", LocalizedKey));
+			Section groupName = new Section(Settings.GenerateHeaderFooter("Group Name", LocalizedKey),
+			    Settings.GenerateHeaderFooter("The name that will best describe your group", LocalizedKey));
 			groupName.IsSearchable = false;
 			nameElement = new EntryElement(
 				Settings.GetLocalizedString("Name", LocalizedKey),
@@ -46,8 +45,8 @@ namespace SmsGroup
 			
 			//SegmentedSection
 			contactSection = new SegmentedSection("Contacts");
-			contactSection.Footer = 
-				Settings.GetLocalizedString("Displays only contacts that have a mobile phone set", LocalizedKey);
+			contactSection.FooterView = 
+				Settings.GenerateHeaderFooter("Displays only contacts that have a mobile phone set", LocalizedKey);
 			contactSection.SegmentedControl.InsertSegment(
 				Settings.GetLocalizedString("All", LocalizedKey),
 				0,true);
@@ -69,61 +68,9 @@ namespace SmsGroup
 			UIBarButtonItem done = new UIBarButtonItem(UIBarButtonSystemItem.Done);
 			done.Clicked += HandleDoneClicked;
 			this.NavigationItem.RightBarButtonItem = done;
-			UIBarButtonItem space = new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace);
-			refresh = new UIBarButtonItem(UIBarButtonSystemItem.Refresh);
-			
-			refresh.Clicked += HandleRefreshClicked;
-			InvokeOnMainThread(() => {
-				//activityView = new UIActivityIndicatorView(new RectangleF(0,0,25,25));
-				
-				//activityView.Hidden = false;				
-				//activityView.HidesWhenStopped = true;
-				//activityView.ActivityIndicatorViewStyle = UIActivityIndicatorViewStyle.White;
-				//loading = new UIBarButtonItem(activityView);
-				this.defaultBarButtonItems = new []{space, refresh};
-			});
 		}
 		
-		//private UIActivityIndicatorView activityView = null;
-		private UIBarButtonItem refresh = null;
-		//private UIBarButtonItem loading = null;
-		void HandleRefreshClicked (object sender, EventArgs e)
-		{
-				
-			ThreadPool.QueueUserWorkItem ((evt) => {
-				Contacts.RefreshAddressBook();
-				InvokeOnMainThread(()=>{ 
-					Initialize();
-					this.ReloadData();
-				});
-			});
-		}
 		
-		void Initialize()
-		{
-			List<Element> personElements = new List<Element>();
-			foreach(var a in Contacts.AddressBook.Where (x => x.Type == ABRecordType.Person))
-			{
-				ABPerson person = a as ABPerson;
-				
-				foreach(var phone in person.GetPhones())
-				{
-					if(phone.Label.ToString().ToLower().Contains("mobile")){
-						bool isInGroup = false;
-						try{
-							isInGroup = (smsGroup != null && smsGroup.Sms != null && smsGroup.Sms.Persons.Any(x => x.Id == a.Id));
-						}catch(Exception ex)
-						{
-							Console.WriteLine(ex);
-						}
-						
-						ABPersonElement el = new ABPersonElement(phone.Value, isInGroup, person);
-						personElements.Add(el);	
-					}
-				}
-			}
-			contactSection.Elements = personElements.OrderBy(x => ((ABPersonElement)x).Person.FirstName).OrderByDescending(x => ((ABPersonElement)x).IsChecked ).ToList<Element>();
-		}
 		
 		void HandleContactSectionSegmentedControlTouchUpInside (object sender, EventArgs e)
 		{
@@ -182,6 +129,28 @@ namespace SmsGroup
 		{
 			base.ViewWillAppear (animated);
 			//activityView.StartAnimating();
+		}
+		
+		public override void HandleRefreshClicked (object sender, EventArgs e)
+		{
+			ThreadPool.QueueUserWorkItem ((evt) => {
+				Contacts.RefreshAddressBook();
+				InvokeOnMainThread(()=>{ 
+					Initialize();
+					this.ReloadData();
+				});
+			});
+		}
+		
+		public void Initialize()
+		{
+			if(this.smsGroup != null)
+			{
+				this.contactSection.Elements = Contacts.GetABPersonElementFrom(this.smsGroup.Sms);
+			}else
+			{
+				this.contactSection.Elements = Contacts.GetABPersonElementFrom(null);
+			}
 		}
 		
 		void HandleDoneClicked (object sender, EventArgs e)
