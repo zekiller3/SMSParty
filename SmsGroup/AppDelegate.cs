@@ -16,7 +16,13 @@ namespace SmsGroup
 		// class-level declarations
 		UIWindow window;
 		UINavigationController viewController;
-
+		public Appirater Apprater;
+		
+		public override void WillEnterForeground (UIApplication application)
+		{
+			Apprater.AppEnteredForeground(false);
+		}
+		
 		//
 		// This method is invoked when the application has loaded and is ready to run. In this 
 		// method you should instantiate the window, load the UI into it and then make the window
@@ -31,9 +37,7 @@ namespace SmsGroup
 			viewController = new UINavigationController ();
 			viewController.PushViewController(new MainScreenGroup(), true);
 			viewController.NavigationBar.Opaque = true;
-			if(viewController.NavigationBar.RespondsToSelector(new MonoTouch.ObjCRuntime.Selector("setBackgroundImage:forBarMetrics:"))){
-	//			viewController.NavigationBar.SetBackgroundImage(UIImage.FromBundle("Images/navigationbar.png"), UIBarMetrics.Default);
-			}
+			
 			window.MakeKeyAndVisible ();
 			
 #if LITE
@@ -46,6 +50,12 @@ namespace SmsGroup
 			else
 				window.AddSubview (viewController.View);
 			
+#if LITE
+			Apprater = new Appirater(527002436);
+#else
+			Apprater = new Appirater(526844540);
+#endif
+			Apprater.AppLaunched();
 			return true;
 		}
 	}

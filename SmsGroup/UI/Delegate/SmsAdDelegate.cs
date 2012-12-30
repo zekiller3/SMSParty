@@ -72,9 +72,10 @@ namespace SmsGroup
 				Console.WriteLine("Removing Banner");
 				banner.Hidden = true;
 				this.isVisible = false;
-				//UIView.BeginAnimations("animateAdBannerOff",IntPtr.Zero);
-				//banner.Frame = new RectangleF(UIScreen.MainScreen.ApplicationFrame.Width, banner.Frame.Y, banner.Frame.Width, banner.Frame.Height);
-				//UIView.CommitAnimations();
+				
+				UIView.BeginAnimations("animateAdBannerOff",IntPtr.Zero);
+				banner.Frame = new RectangleF(UIScreen.MainScreen.ApplicationFrame.Width, banner.Frame.Y, banner.Frame.Width, banner.Frame.Height);
+				UIView.CommitAnimations();
 				
 				if(controller != null)
 				{
@@ -89,9 +90,6 @@ namespace SmsGroup
 			if(!mustDisappear && banner.BannerLoaded && !this.isVisible)
 			{
 				Console.WriteLine("Adding Banner");
-				//UIView.BeginAnimations("animateAdBannerOn",IntPtr.Zero);
-				//banner.Frame = new RectangleF(0, banner.Frame.Y, banner.Frame.Width, banner.Frame.Height);
-				//UIView.CommitAnimations();
 				isVisible = true;
 				banner.Hidden = false;
 				if(this.controller != null)
@@ -106,6 +104,10 @@ namespace SmsGroup
 						Console.WriteLine("View in base controller : {0}", controller.MainView.Subviews.Count());
 					});
 				}
+				
+				UIView.BeginAnimations("animateAdBannerOn",IntPtr.Zero);
+				banner.Frame = new RectangleF(0, banner.Frame.Y, banner.Frame.Width, banner.Frame.Height);
+				UIView.CommitAnimations();
 			}
 		}
 	}

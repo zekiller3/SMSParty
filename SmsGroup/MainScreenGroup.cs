@@ -17,7 +17,7 @@ namespace SmsGroup
 		public MainScreenGroup () : base (true, ToolbarItemOption.Add)
 		{
 #if LITE
-			Root = new RootElement("SMS Party Free");
+			Root = new RootElement("SMS Party Lite");
 #else
 			Root = new RootElement("SMS Party");
 #endif
@@ -48,20 +48,29 @@ namespace SmsGroup
 				this.ListGroupSection = new Section(header);
 				Root.Add(this.ListGroupSection);
 			}
-//			UIBarButtonItem contact = new UIBarButtonItem("Contact",UIBarButtonItemStyle.Bordered, ShowAddressBook);
-//			UIBarButtonItem flex = new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace);
-//			UIBarButtonItem addButton =
-//				new UIBarButtonItem(UIBarButtonSystemItem.Add, CreateButtonTapped);
-//			this.ToolbarItems = new UIBarButtonItem[]{contact, flex, addButton};
+			
+#if LITE
+			List<UIBarButtonItem> defaultBar = new List<UIBarButtonItem>(this.defaultBarButtonItems);
+			UIBarButtonItem full = new UIBarButtonItem(UIImage.FromBundle("Images/shopping.png"), UIBarButtonItemStyle.Plain, null);
+			full.Clicked+=  (sender, evt) => {
+				UIAlertView goToPaid = new UIAlertView("Go to SMS Party full version", "You are about to go to the App Store", null, "No", "Yes");
+				goToPaid.Clicked += (sndr, e) =>
+				{
+					if(e.ButtonIndex == goToPaid.CancelButtonIndex) return;
+					string url = string.Format(Appirater.TEMPLATE_VIEW_URL,526844540);
+					InvokeOnMainThread(()=> {
+						UIApplication.SharedApplication.OpenUrl (NSUrl.FromString (url));});
+				};
+				goToPaid.Show();                       
+			};
+			
+			defaultBar.Insert(0, full);
+			this.defaultBarButtonItems = defaultBar.ToArray();
+#endif
 			ThreadPool.QueueUserWorkItem ((e) => {
           		LoadGroups();
 			});
 			
-		}
-		
-		void ShowAddressBook(object sender, EventArgs e)
-		{
-			//this.NavigationController.PushViewController(c, true);
 		}
 		
 		public void CreateButtonTapped()

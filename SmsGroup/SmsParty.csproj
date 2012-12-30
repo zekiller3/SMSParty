@@ -35,17 +35,16 @@
     <MtouchLink>None</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <DefineConstants>DEBUG;LITE</DefineConstants>
+    <DefineConstants>FULL</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer: ronny kwon (3TDT2NB4V2)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchProfiling>true</MtouchProfiling>
-    <CodesignProvision>60B96F81-AC6C-41C9-B5A5-3FF0E306C586</CodesignProvision>
+    <CodesignProvision>CF52E282-B655-41BE-B217-B89C32C2BE01</CodesignProvision>
     <MtouchI18n />
     <BuildIpa>true</BuildIpa>
     <IpaMetadata>Info.plist</IpaMetadata>
@@ -71,7 +70,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Distribution: ronny kwon</CodesignKey>
+    <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignProvision>4C0EB064-41A5-4FDC-BAC6-4386C8C09114</CodesignProvision>
     <MtouchI18n />
     <IpaPackageName />
@@ -87,14 +86,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer: ronny kwon (3TDT2NB4V2)</CodesignKey>
-    <CodesignProvision>60B96F81-AC6C-41C9-B5A5-3FF0E306C586</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>89FE7171-AE2E-44E5-A512-EB4E80E41D84</CodesignProvision>
     <IpaPackageName />
     <MtouchI18n />
     <MtouchArch>ARMv7</MtouchArch>
     <OutputPath>bin\Lite</OutputPath>
     <MtouchSdkVersion>5.0</MtouchSdkVersion>
     <MtouchUseLlvm>true</MtouchUseLlvm>
+    <MtouchUseThumb>true</MtouchUseThumb>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'FULL|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -157,6 +157,7 @@
     <Compile Include="Data\Core\Reachability.cs" />
     <Compile Include="UI\Delegate\SmsAdDelegate.cs" />
     <Compile Include="UI\AdManager.cs" />
+    <Compile Include="Data\Core\Appirate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -181,8 +182,6 @@
     <Content Include="en.lproj\Localizable.strings" />
     <Content Include="es.lproj\Localizable.strings" />
     <Content Include="ja.lproj\Localizable.strings" />
-    <Content Include="Images\320x480.jpg" />
-    <Content Include="Images\640x960.jpg" />
     <Content Include="Default%402x.png" />
     <Content Include="Default.png" />
     <Content Include="Images\paid\icon_114.png" />
@@ -191,8 +190,8 @@
     <Content Include="Images\paid\icon_57.png" />
     <Content Include="Images\paid\icon_58.png" />
     <Content Include="Images\paid\icon_72.png" />
-    <Content Include="Images\navigationbar.png" />
     <Content Include="Images\SMSBackground.jpg" />
+    <Content Include="Images\shopping.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\remote\MonoTouch.Dialog\MonoTouch.Dialog\MonoTouch.Dialog.csproj">

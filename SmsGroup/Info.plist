@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>SMS Party Lite</string>
+	<string>SMSPartyLite</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Images/paid/icon_72.png</string>

@@ -313,8 +313,9 @@ namespace SmsGroup
 								Settings.GetLocalizedString("Your message will be sent soon", LocalizedKey),
 								null, "OK");
 							this.InvokeOnMainThread(()=> { alert.Show();});
-						});
 						
+						((AppDelegate)UIApplication.SharedApplication.Delegate).Apprater.UserDidSignificantEvent(true);
+						});
 					}
 					break;
 				

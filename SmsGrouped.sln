@@ -1,11 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsGrouped", "SmsGrouped\SmsGrouped.csproj", "{D0881A77-CA04-4BB7-AD21-043398817C64}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsParty", "SmsGroup\SmsParty.csproj", "{9E21BA99-308D-4028-BAD2-CC2E43D5DE4B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Debug", "Debug\Debug.csproj", "{89153AC1-B870-4ECF-802C-7AD93B492D46}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoTouch.Dialog", "..\..\remote\MonoTouch.Dialog\MonoTouch.Dialog\MonoTouch.Dialog.csproj", "{3FFBFFF8-5560-4EDE-82E5-3FFDFBBA8A50}"
 EndProject
@@ -49,17 +45,6 @@ Global
 		{3FFBFFF8-5560-4EDE-82E5-3FFDFBBA8A50}.Release|iPhone.Build.0 = Release|iPhone
 		{3FFBFFF8-5560-4EDE-82E5-3FFDFBBA8A50}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{3FFBFFF8-5560-4EDE-82E5-3FFDFBBA8A50}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{89153AC1-B870-4ECF-802C-7AD93B492D46}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{89153AC1-B870-4ECF-802C-7AD93B492D46}.Debug|iPhone.Build.0 = Debug|iPhone
-		{89153AC1-B870-4ECF-802C-7AD93B492D46}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{89153AC1-B870-4ECF-802C-7AD93B492D46}.FULL|iPhone.ActiveCfg = FULL|iPhone
-		{89153AC1-B870-4ECF-802C-7AD93B492D46}.FULL|iPhoneSimulator.ActiveCfg = FULL|iPhoneSimulator
-		{89153AC1-B870-4ECF-802C-7AD93B492D46}.LITE|iPhone.ActiveCfg = LITE|iPhone
-		{89153AC1-B870-4ECF-802C-7AD93B492D46}.LITE|iPhoneSimulator.ActiveCfg = LITE|iPhoneSimulator
-		{89153AC1-B870-4ECF-802C-7AD93B492D46}.Release|iPhone.ActiveCfg = Release|iPhone
-		{89153AC1-B870-4ECF-802C-7AD93B492D46}.Release|iPhone.Build.0 = Release|iPhone
-		{89153AC1-B870-4ECF-802C-7AD93B492D46}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{89153AC1-B870-4ECF-802C-7AD93B492D46}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{9E21BA99-308D-4028-BAD2-CC2E43D5DE4B}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{9E21BA99-308D-4028-BAD2-CC2E43D5DE4B}.Debug|iPhone.Build.0 = Debug|iPhone
 		{9E21BA99-308D-4028-BAD2-CC2E43D5DE4B}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
@@ -76,17 +61,6 @@ Global
 		{9E21BA99-308D-4028-BAD2-CC2E43D5DE4B}.Release|iPhone.Build.0 = Release|iPhone
 		{9E21BA99-308D-4028-BAD2-CC2E43D5DE4B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{9E21BA99-308D-4028-BAD2-CC2E43D5DE4B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{D0881A77-CA04-4BB7-AD21-043398817C64}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{D0881A77-CA04-4BB7-AD21-043398817C64}.Debug|iPhone.Build.0 = Debug|iPhone
-		{D0881A77-CA04-4BB7-AD21-043398817C64}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{D0881A77-CA04-4BB7-AD21-043398817C64}.FULL|iPhone.ActiveCfg = FULL|iPhone
-		{D0881A77-CA04-4BB7-AD21-043398817C64}.FULL|iPhoneSimulator.ActiveCfg = FULL|iPhoneSimulator
-		{D0881A77-CA04-4BB7-AD21-043398817C64}.LITE|iPhone.ActiveCfg = LITE|iPhone
-		{D0881A77-CA04-4BB7-AD21-043398817C64}.LITE|iPhoneSimulator.ActiveCfg = LITE|iPhoneSimulator
-		{D0881A77-CA04-4BB7-AD21-043398817C64}.Release|iPhone.ActiveCfg = Release|iPhone
-		{D0881A77-CA04-4BB7-AD21-043398817C64}.Release|iPhone.Build.0 = Release|iPhone
-		{D0881A77-CA04-4BB7-AD21-043398817C64}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{D0881A77-CA04-4BB7-AD21-043398817C64}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = SmsGroup\SmsParty.csproj
